@@ -1,0 +1,39 @@
+\name{theme_wsj}
+\alias{theme_wsj}
+\title{Wall Street Journal theme}
+\usage{
+  theme_wsj(base_size = 12, color = "brown",
+    base_family = "sans", title_family = "Courier")
+}
+\arguments{
+  \item{base_size}{Base font size.}
+
+  \item{color}{The background color of plot. One of
+  \code{"brown", "gray", "green", "blue"}, the names of
+  values in \code{ggthemes_data$wsj$bg}.}
+
+  \item{title_family}{Plot title font family.}
+
+  \item{base_family}{Plot text font family.}
+}
+\description{
+  Theme based on the plots in \emph{The Wall Street
+  Journal}.
+}
+\examples{
+(qplot(hp, mpg, data=mtcars, geom="point")
++ scale_colour_wsj("colors6", "")
++ ggtitle("Diamond Prices")
++ theme_wsj())
+## Use a gray background instead
+(qplot(hp, mpg, data=mtcars, geom="point")
+ + scale_colour_wsj("colors6", "")
+ + ggtitle("Diamond Prices")
+ + theme_wsj(color="gray"))
+}
+\references{
+  \url{https://twitter.com/WSJGraphics}
+
+  \url{http://pinterest.com/wsjgraphics/wsj-graphics/}
+}
+

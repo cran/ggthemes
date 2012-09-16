@@ -1,0 +1,30 @@
+\name{theme_few}
+\alias{theme_few}
+\title{Theme based on Few's "Practical Rules for Using Color in Charts"}
+\usage{
+  theme_few(base_size = 12, base_family = "")
+}
+\arguments{
+  \item{base_size}{base font size}
+
+  \item{base_family}{base font family}
+}
+\description{
+  Theme based on the rules and examples in
+  \href{http://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf}{"Practical
+  Rules for Using Color in Charts"}.
+}
+\examples{
+dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
+(qplot(carat, price, data=dsamp, colour=clarity)
++ theme_few()
++ scale_colour_few())
+(qplot(carat, price, data=dsamp, colour=clarity)
++ theme_few()
++ scale_colour_few("dark"))
+(ggplot(diamonds, aes(clarity, fill=cut))
++ geom_bar()
++ theme_few()
++ scale_fill_few("light"))
+}
+

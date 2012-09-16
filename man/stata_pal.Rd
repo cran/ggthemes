@@ -1,0 +1,23 @@
+\name{stata_pal}
+\alias{stata_pal}
+\title{Stata color palettes (discrete)}
+\usage{
+  stata_pal(scheme = "s2color")
+}
+\arguments{
+  \item{scheme}{\code{character}. One of \code{"s2color"},
+  \code{"s1rcolor"}, \code{"s1color"}, or \code{"mono"}.}
+}
+\description{
+  Stata color palettes. See Stata documentation for a
+  description of the schemes,
+  \url{http://www.stata.com/help.cgi?schemes}.
+}
+\examples{
+library(scales)
+show_col(stata_pal("s2color")(15))
+show_col(stata_pal("s1rcolor")(15))
+show_col(stata_pal("s1color")(15))
+show_col(stata_pal("mono")(15))
+}
+
