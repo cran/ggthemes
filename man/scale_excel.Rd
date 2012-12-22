@@ -1,0 +1,35 @@
+\name{scale_fill_excel}
+\alias{scale_color_excel}
+\alias{scale_colour_excel}
+\alias{scale_fill_excel}
+\title{Excel color scales}
+\usage{
+  scale_fill_excel(palette = "line", ...)
+
+  scale_colour_excel(palette = "fill", ...)
+
+  scale_color_excel(palette = "fill", ...)
+}
+\arguments{
+  \item{palette}{One of \code{"old"}, \code{"fill"}, or
+  \code{"new"}.}
+
+  \item{...}{Other arguments passed on to
+  \code{\link{discrete_scale}} to control name, limits,
+  breaks, labels and so forth.}
+}
+\description{
+  Color scales from both old and new Excel.
+}
+\examples{
+dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
+(qplot(carat, price, data=dsamp, colour=clarity)
+ + theme_igray()
+ + scale_colour_excel("new"))
+}
+\seealso{
+  See \code{\link{theme_excel}} for examples.
+
+  Other colour excel: \code{\link{excel_pal}}
+}
+

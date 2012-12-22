@@ -1,0 +1,26 @@
+\name{show_linetypes}
+\alias{show_linetypes}
+\title{Show linetypes}
+\usage{
+  show_linetypes(linetypes, labels = TRUE)
+}
+\arguments{
+  \item{linetypes}{A character vector of linetypes. See
+  \code{\link{par}}.}
+
+  \item{labels}{Label each line with its linetype (lty)
+  value.}
+}
+\description{
+  A quick and dirty way to show linetypes.
+}
+\examples{
+library(scales)
+show_linetypes(linetype_pal()(3))
+show_linetypes(linetype_pal()(3), labels=TRUE)
+}
+\seealso{
+  \code{\link[scales]{show_col}},
+  \code{\link{show_linetypes}}
+}
+
