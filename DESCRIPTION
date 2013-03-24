@@ -1,6 +1,6 @@
 Package: ggthemes
-Version: 1.3.2
-Date: 2012-9-16
+Version: 1.3.3
+Date: 2013-3-24
 Title: Extra themes, scales and geoms for ggplot
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
         email = "jeffrey.arnold@gmail.com"))
@@ -18,7 +18,7 @@ Collate: 'economist.R' 'shapes.R' 'stata.R' 'solarized.R' 'excel.R'
         'stat-fivenumber.R' 'utils.R' 'tableau.R' 'igray.R' 'few.R'
         'ggthemes-data.R' 'ggthemes-package.R' 'theme-foundation.R'
         'banking.R' 'wsj.R' 'colorblind.R'
-Packaged: 2013-02-05 12:18:14 UTC; jrnold
-Repository: CRAN
-Date/Publication: 2013-03-25 07:06:13
+Packaged: 2013-03-25 00:21:36 UTC; jrnold
 NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2013-03-25 07:10:49
