@@ -1,6 +1,6 @@
-5a936b5da5431f63cba3b22659707ffb *DESCRIPTION
+977e16d4600fcf7bc4cd0626e03f85b7 *DESCRIPTION
 ba780be5cd9306938aa890e358d5559f *NAMESPACE
-8450455623a04609c1cd37439810d249 *NEWS
+2a606675ae8ff94218d162accdeae7cb *NEWS
 7edb185dbb536a1661ecb14183478539 *R/banking.R
 e4af31a0efaf2e5f656dc4d874ca580c *R/colorblind.R
 ccf501e96e5120c83dfa40afdb7373e2 *R/economist.R
@@ -20,7 +20,7 @@ d26a92028f4d1a00e66a96780b6ac652 *R/solarized.R
 207053d513c2eef9cbac760447e148e3 *R/tufte.R
 8dea608c8f6e335eba2aa674216add64 *R/utils.R
 a6df1b7def8b37299c7523c09917b82c *R/wsj.R
-345df622d5f9c67031f359805169c2b5 *build/partial.rdb
+fc89f92bb53dbc0d2fc4baa704ca82f9 *build/partial.rdb
 7bb30666f26bec6f0368b3aa2dd65e93 *man/bank_slopes.Rd
 0164c0344c52954f95f3343be4a60ad3 *man/circlefill_shape_pal.Rd
 263932c2de53d2fb55677e34effe830f *man/cleveland_shape_pal.Rd
