@@ -1,6 +1,6 @@
 Package: ggthemes
-Version: 1.5.1
-Date: 2013-10-19
+Version: 1.6.0
+Date: 2013-12-14
 Title: Extra themes, scales and geoms for ggplot
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     email = "jeffrey.arnold@gmail.com"))
@@ -11,14 +11,9 @@ Description: Some extra themes, geoms, and scales for ggplot2.
 License: GPL-2
 URL: http://github.com/jrnold/ggthemes
 BugReports: http://github.com/jrnold/ggthemes
-Collate: 'economist.R' 'shapes.R' 'stata.R' 'solarized.R' 'excel.R'
-        'tufte.R' 'geom-rangeframe.R' 'geom-tufteboxplot.R'
-        'stat-fivenumber.R' 'utils.R' 'tableau.R' 'igray.R' 'few.R'
-        'ggthemes-data.R' 'ggthemes-package.R' 'theme-foundation.R'
-        'banking.R' 'wsj.R' 'colorblind.R' 'calc.R' 'gdocs.R'
-Packaged: 2013-10-19 22:59:04 UTC; jrnold
+Packaged: 2013-12-14 17:31:02 UTC; jrnold
 Author: Jeffrey B. Arnold [aut, cre]
 Maintainer: Jeffrey B. Arnold <jeffrey.arnold@gmail.com>
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-10-20 08:16:09
+Date/Publication: 2013-12-14 19:48:41
