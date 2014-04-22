@@ -1,6 +1,6 @@
-564eee67374e77e2e8c36ab0fb0223a8 *DESCRIPTION
-c6ed9cbc52e5c68cb95714590075c2b0 *NAMESPACE
-67e3ac576b1e51293a8cf5692bfd6567 *NEWS
+a0c7c064125c95a41a97daa11a94d173 *DESCRIPTION
+5adccbef646080f76fa6847ed302445d *NAMESPACE
+1d4a111e9e99564c43b07cff00b0d10a *NEWS
 7edb185dbb536a1661ecb14183478539 *R/banking.R
 076841b612fb3ed7206fbe224f43d396 *R/calc.R
 e4af31a0efaf2e5f656dc4d874ca580c *R/colorblind.R
@@ -13,6 +13,7 @@ cddcb1eade6d101ae09a1fa83e30ba34 *R/geom-tufteboxplot.R
 655af66bd54aa25f62023225913fc6c8 *R/ggthemes-data.R
 2664e950650468b896a4f8f7e196f787 *R/ggthemes-package.R
 16ab2decc26d3d88c5c723019aaa222b *R/igray.R
+245b26e9caa3bcbd516dfa4ac6530208 *R/scale-tufte.R
 c662b430d68af494994584f670d373cf *R/shapes.R
 627333c328b4f8baf774cd4fee03ce89 *R/solarized.R
 62db0ed4fb5700f2c2b8ec60d411beea *R/stat-fivenumber.R
@@ -22,8 +23,8 @@ c662b430d68af494994584f670d373cf *R/shapes.R
 c3a5c3a771526b6eaae501d730ac62f4 *R/theme-solid.R
 207053d513c2eef9cbac760447e148e3 *R/tufte.R
 c4ee1a6f08202256572866cda272eb33 *R/utils.R
-5243754a5fe5aeaf750b034c19541684 *R/wsj.R
-3d37f16c99ee87a90c5251675ff4cf6f *build/partial.rdb
+bc942569dc928c452f993b5e8c1db52f *R/wsj.R
+0c0d8f16eee5d0a2b7a5ff7885adf804 *build/partial.rdb
 35702cb411968f2134e3b32f31ba7024 *man/bank_slopes.Rd
 e070576b0a9382baf41a41ee377f0cad *man/calc_pal.Rd
 6e54f8dce1b72fb76ba3eec64c5e64d5 *man/calc_shape_pal.Rd
@@ -38,6 +39,7 @@ a532bf9d0716fc75a62149ab360ba083 *man/few_pal.Rd
 07fd746bb5cd6e6fc946932f13213db9 *man/geom_tufteboxplot.Rd
 cb9bbd452507f81f0db7aede93982d60 *man/ggthemes.Rd
 db5585d791078175663405b055882d98 *man/ggthemes_data.Rd
+9eb548ffa5e5ddd9290d12dca4d4f13b *man/range_breaks.Rd
 d2590ebab9ea4cb9b9dd13c82740bee9 *man/scale_calc.Rd
 4d9e5f8f0a58e56c9139555fef575344 *man/scale_color_tableau.Rd
 9a9ca7e85bc306d6a4c7cf2d437f9527 *man/scale_colour_gradient2_tableau.Rd
@@ -55,9 +57,11 @@ d63b943cb4880d11bb1eee611ef65ee0 *man/scale_shape_stata.Rd
 a0ca9cd8bfa2a05c02ea6e88848037f6 *man/scale_shape_tremmel.Rd
 1d908e2f37860b53bd09463b3eba91ee *man/scale_solarized.Rd
 5b17b3a4bf1fde306ab9a4f2226d8eac *man/scale_stata.Rd
+fbb6658ef7e399d30175afc0733ec7da *man/scale_tufte.Rd
 97663632b9c2f9cfdc846f56c082693e *man/scale_wsj.Rd
 fb4c0249443b9ee48a257c443ce2803a *man/show_linetypes.Rd
 6b8a121b94857f62dff4a87ae6162ebd *man/show_shapes.Rd
+96d298cf819eac36cbb3bf899cebcaa7 *man/smart_digits.Rd
 dce940e6171a2d130eb90dd877de1e39 *man/solarized_pal.Rd
 f0a79a690822bba78da25d6987db518e *man/solarized_rebase.Rd
 c9073948132ccec3574b2c90f630df3d *man/stat_fivenumber.Rd
