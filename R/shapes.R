@@ -60,8 +60,8 @@ cleveland_shape_pal <- function(overlap=TRUE) {
             c(1, ## empty circle
               19, ## solid circle
               10, ## encircled plus sign
-              -0x2299, ## ⊙ 2299
-              -0x229A ## ⊚ 229A
+              -0x2299, ##
+              -0x229A ##
               )[seq_len(n)]
         }
     }
@@ -82,31 +82,6 @@ cleveland_shape_pal <- function(overlap=TRUE) {
 scale_shape_cleveland <- function(overlap=TRUE, ...) {
     discrete_scale("shape", "cleveland", cleveland_shape_pal(overlap), ...)
 }
-
-##
-## Miscellaneous
-## ☉ 2609
-## ⚪ 26AA
-## ⚫ 26AB
-## Mathematical
-## ⊙ 2299
-## ⊚ 229A
-## Geometric shapes
-## ◉ 25C9
-## ○ 25CB
-## ◎ 25CE
-## ● 25CF
-## ◐ 25D0
-## ◑ 25D1
-## ◒ 25D2
-## ◓ 25D3
-## ◔ 25D4
-## ◕ 25D5
-## ◴ 25F4
-## ◵ 25F5
-## ◶ 25F6
-## ◷ 25F7
-## ◯ 25EF
 
 ##' Filled Circle Shape palette (discrete)
 ##'
