@@ -5,121 +5,133 @@ opts_chunk$set(fig.width = 5.25, fig.height = 3.75, cache=FALSE)
 ## ----dsamp---------------------------------------------------------------
 library("ggplot2")
 library("ggthemes")
-dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
+
+p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  ggtitle("Cars")
+
+p2 <- ggplot(mtcars, aes(x = wt, y = mpg, colour = factor(gear))) +
+  geom_point() +
+  ggtitle("Cars")
+
+p3 <- p2 + facet_wrap(~ am)
+
+
 
 ## ----tufte-rangeframe----------------------------------------------------
-(ggplot(mtcars, aes(wt, mpg))
-  + geom_point() + geom_rangeframe()
-  + theme_tufte())
+p + geom_rangeframe() +
+  theme_tufte() + 
+  scale_x_continuous(breaks = extended_range_breaks()(mtcars$wt)) +
+  scale_y_continuous(breaks = extended_range_breaks()(mtcars$mpg))
 
 ## ----tufteboxplot--------------------------------------------------------
-(ggplot(mtcars, aes(factor(cyl), mpg)) 
- + theme_tufte(ticks=FALSE)
- + geom_tufteboxplot())
+p4 <- ggplot(mtcars, aes(factor(cyl), mpg))
+
+p4 + theme_tufte(ticks=FALSE) + geom_tufteboxplot()
+
+
+## ----tufteboxplot2-------------------------------------------------------
+p4 + theme_tufte(ticks=FALSE) +
+  geom_tufteboxplot(median.type = "line")
+
+## ----tufteboxplot3-------------------------------------------------------
+p4 + theme_tufte(ticks=FALSE) +
+  geom_tufteboxplot(median.type = "line", whisker.type = 'point', hoffset = 0)
+
+
+## ----tufteboxplot4-------------------------------------------------------
+p4 + theme_tufte(ticks=FALSE) +
+  geom_tufteboxplot(median.type = "line", whisker.type = 'line', hoffset = 0, width = 3)
+
 
 ## ----economist-----------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_economist()
- + scale_colour_economist()
- + ggtitle("Diamonds Are Forever"))
+p2 + theme_economist() + scale_colour_economist() 
 
 ## ----solarized-light-----------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
-                             + theme_solarized()
-                             + scale_colour_solarized("blue"))
+p2 + theme_solarized() +
+  scale_colour_solarized("blue")
 
 ## ----solarized-dark------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
-                             + theme_solarized(light=FALSE)
-                             + scale_colour_solarized("red"))
+p2 + theme_solarized(light = FALSE) +
+  scale_colour_solarized("red")
+
 
 ## ----solarized-alt-------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
-                             + theme_solarized_2()
-                             + scale_colour_solarized("blue"))
+p2 + theme_solarized_2(light = FALSE) +
+  scale_colour_solarized("blue")
+
 
 ## ----stata---------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
-                             + theme_stata() 
-                             + scale_colour_stata()
-                             + ggtitle("Plot Title"))
+p2 + theme_stata() + scale_colour_stata()
+                             
 
 ## ----excel1--------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_excel() 
- + scale_colour_excel())
+p2 + theme_excel() + scale_colour_excel()
 
 
 ## ----excel2--------------------------------------------------------------
-(ggplot(diamonds, aes(clarity, fill=cut)) 
- + geom_bar()
- + scale_fill_excel()
- + theme_excel())
+ggplot(diamonds, aes(x = clarity, fill = cut)) +
+  geom_bar() +
+  scale_fill_excel() +
+  theme_excel()
+
 
 ## ----igray---------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_igray())
+p2 + theme_igray()
+
 
 ## ----fivethirtyeight-----------------------------------------------------
-(qplot(hp, mpg, data= subset(mtcars, cyl != 5), geom="point", color = factor(cyl))
- + geom_smooth(method = "lm", se = FALSE)
- + scale_color_fivethirtyeight()
- + theme_fivethirtyeight())
+p2 + geom_smooth(method = "lm", se = FALSE) +
+  scale_color_fivethirtyeight("cyl") +
+  theme_fivethirtyeight()
+
 
 ## ----tableau-------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_igray()
- + scale_colour_tableau())
+p2 + theme_igray() + scale_colour_tableau()
+
 
 ## ----tableau-colorbind10-------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_igray()
- + scale_colour_tableau("colorblind10"))
+p2 + theme_igray() + scale_colour_tableau("colorblind10")
+
 
 ## ----few-----------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_few()
- + scale_colour_few())
+p2 + theme_few() + scale_colour_few()
 
 ## ----wsj-----------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=cut)
- + theme_wsj()
- + scale_colour_wsj("colors6", "")
- + ggtitle("Diamond Prices"))
+p2 + theme_wsj() + scale_colour_wsj("colors6", "")
+
+## ------------------------------------------------------------------------
+p2 + theme_base()
+
+## ------------------------------------------------------------------------
+par(fg = "blue", bg = "gray", col.lab = "red", font.lab = 3)
+p2 + theme_par()
 
 ## ----gdocs---------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=clarity)
- + theme_gdocs()
- + ggtitle("Diamonds")
- + scale_color_gdocs())
+p2 + theme_gdocs() + scale_color_gdocs()
+
 
 ## ----calc----------------------------------------------------------------
-(qplot(carat, price, data=dsamp, colour=clarity)
- + theme_calc()
- + ggtitle("Diamonds")
- + scale_color_calc())
+p2 + theme_calc() + scale_color_calc()
 
 ## ----pander-scatterplot--------------------------------------------------
-(qplot(carat, price, data = dsamp, colour = clarity)
- + theme_pander()
- + scale_colour_pander())
+p2 + theme_pander() + scale_colour_pander()
+ 
 
 ## ----pander-barplot------------------------------------------------------
-(ggplot(dsamp, aes(clarity, fill = cut)) + geom_bar()
-  + theme_pander()
-  + scale_fill_pander())
+ggplot(diamonds, aes(x = clarity, fill = cut)) +
+  geom_bar() +
+  theme_pander() +
+  scale_fill_pander()
+  
 
 ## ----hc-default----------------------------------------------------------
-(qplot(carat, price, data = dsamp, colour = cut)
- + theme_hc()
- + scale_colour_hc()
- + ggtitle("Diamonds Are Forever"))
+p2 + theme_hc() + scale_colour_hc()
+ 
 
 ## ----hc-darkunica--------------------------------------------------------
-(qplot(carat, price, data = dsamp, colour = cut)
- + theme_hc(bgcolor = "darkunica")
- + scale_colour_hc("darkunica")
- + ggtitle("Diamonds Are Forever"))
+p2 + theme_hc(bgcolor = "darkunica") +
+  scale_colour_hc("darkunica")
 
 ## ----dtemp---------------------------------------------------------------
 dtemp <- data.frame(months = factor(rep(substr(month.name,1,3), 4), levels = substr(month.name,1,3)),
@@ -130,27 +142,29 @@ dtemp <- data.frame(months = factor(rep(substr(month.name,1,3), 4), levels = sub
                              3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8))
 
 ## ----hc-default-line-----------------------------------------------------
-qplot(months, temp, data=dtemp, group=city, color=city, geom="line") +
-  geom_point(size=1.1) + 
+ggplot(dtemp, aes(x = months, y = temp, group = city, color = city)) +
+  geom_line() +
+  geom_point(size = 1.1) + 
   ggtitle("Monthly Average Temperature") +
   theme_hc() +
   scale_colour_hc()
 
 ## ----hc-darkunica-line---------------------------------------------------
-qplot(months, temp, data=dtemp, group=city, color=city, geom="line") +
-  geom_point(size=1.1) + 
+ggplot(dtemp, aes(x = months, y = temp, group = city, color = city)) +
+  geom_line() + 
+  geom_point(size = 1.1) + 
   ggtitle("Monthly Average Temperature") +
   theme_hc(bgcolor = "darkunica") +
   scale_fill_hc("darkunica")
 
-## ----map-----------------------------------------------------------------
+## ----map,message=FALSE---------------------------------------------------
 library("maps")
 us <- fortify(map_data("state"), region = "region")
-(ggplot()
-  + geom_map(data  =  us, map = us,
-             aes(x = long, y = lat, map_id = region, group = group),
-             fill = "white", color = "black", size = 0.25)
-  + coord_map("albers", lat0 = 39, lat1 = 45)
-  + theme_map()
-  )
+ggplot() +
+  geom_map(data  =  us, map = us,
+           aes(x = long, y = lat, map_id = region, group = group),
+           fill = "white", color = "black", size = 0.25) +
+  coord_map("albers", lat0 = 39, lat1 = 45) +
+  theme_map()
+
 

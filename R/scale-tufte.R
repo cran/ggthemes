@@ -61,14 +61,14 @@
 
 
 #' Pretty axis breaks inclusive of extreme values
-#' 
+#'
 #' This function returns pretty axis breaks that always include the extreme  values of the data.
 #' This works by calling the extended Wilkinson alogorithm (Talbot et. al, 2010), constrained to solutions interior to the data range.
 #' Then, the minimum and maximum labels are moved to the minimum and maximum of the data range.
 #'
 #' \code{extended_range_breaks} implements the algorithm and returns the break values.
 #' \code{scales_extended_range_breaks} uses the conventions of the \pkg{scales} package, and returns a function.
-#' 
+#'
 #' @param dmin minimum of the data range
 #' @param dmax maximum of the data range
 #' @param n desired number of breaks
@@ -76,17 +76,16 @@
 #' @param w weights applied to the four optimization components (simplicity, coverage, density, and legibility)
 #' @return For \code{extended_range_breaks}, the vector of axis label locations.
 #' For \code{scales_extended_range_breaks}, a function which takes a single argument, a vector of data, and returns the vector of axis label locations.
-#' @seealso \code{\link{scale_y_tufte}}, \code{\link{scale_x_tufte}}
 #' @references
 #' Talbot, J., Lin, S., Hanrahan, P. (2010) An Extension of Wilkinson's Algorithm for Positioning Tick Labels on Axes, InfoVis 2010.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}, Jeffrey B. Arnold, Baptiste Auguie
 #' @rdname range_breaks
 #' @export
-extended_range_breaks <- function(dmin, dmax, n = 5,
-                                  Q = c(1, 5, 2, 2.5, 4, 3),
-                                  w = c(0.25, 0.2, 0.5, 0.05)) {
+extended_range_breaks_ <- function(dmin, dmax, n = 5,
+                                   Q = c(1, 5, 2, 2.5, 4, 3),
+                                   w = c(0.25, 0.2, 0.5, 0.05)) {
   eps <- .Machine$double.eps * 100
-  
+
   if(dmin > dmax) {
     temp <- dmin
     dmin <- dmax
@@ -103,7 +102,7 @@ extended_range_breaks <- function(dmin, dmax, n = 5,
 
   best <- list()
   best$score <- -2
-  
+
   j <- 1
   while(j < Inf)
   {
@@ -116,27 +115,27 @@ extended_range_breaks <- function(dmin, dmax, n = 5,
         j <- Inf
         break
       }
-    
+
       k <- 2
       while(k < Inf)                          # loop over tick counts
-      {    
+      {
         dm <- .density.max(k, n)
 
         if((w[1]*sm+w[2]+w[3]*dm+w[4]) < best$score)
           break
-      
+
         delta <- (dmax-dmin)/(k+1)/j/q
         z <- ceiling(log(delta, base=10))
 
         while(z < Inf)
-        {      
+        {
           step <- j*q*10^z
 
           cm <- .coverage.max(dmin, dmax, step*(k-1))
 
           if((w[1]*sm+w[2]*cm+w[3]*dm+w[4]) < best$score)
             break
-          
+
           min_start <- floor(dmax/(step))*j - (k - 1)*j
           max_start <- ceiling(dmin/(step))*j
 
@@ -153,9 +152,9 @@ extended_range_breaks <- function(dmin, dmax, n = 5,
             lstep <- step
 
             s <- .simplicity(q, Q, j, lmin, lmax, lstep)
-            c <- .coverage(dmin, dmax, lmin, lmax)            
+            c <- .coverage(dmin, dmax, lmin, lmax)
             g <- .density(k, n, dmin, dmax, lmin, lmax)
-            l <- .legibility(lmin, lmax, lstep)            
+            l <- .legibility(lmin, lmax, lstep)
 
             score <- w[1]*s + w[2]*c + w[3]*g + w[4]*l
 
@@ -169,11 +168,11 @@ extended_range_breaks <- function(dmin, dmax, n = 5,
             }
           }
           z <- z+1
-        }        
+        }
         k <- k+1
       }
     }
-    j <- j + 1    
+    j <- j + 1
   }
   breaks <- seq(from=best$lmin, to=best$lmax, by=best$lstep)
   if (length(breaks) >= 2) {
@@ -184,61 +183,41 @@ extended_range_breaks <- function(dmin, dmax, n = 5,
 }
 
 #' @rdname range_breaks
-#' @param expand see \code{\link{scale_x_continuous}}.
-#' @param ... other arguments passed to \code{extended_range_breaks}
+#' @param ... other arguments passed to \code{extended_range_breaks_}
+#' @return A function which returns breaks given a vector.
 #' @export
-scales_extended_range_breaks <- function (expand = c(0, 0), ...)  {
+extended_range_breaks <- function (n = 5, ...)  {
     function(x) {
-        spread <- range(x)
-        m <- matrix(c(1+expand[1], expand[1], expand[1], 1+expand[1]), 
-                    ncol=2, byrow=TRUE)
-        limits <- m %*% (spread + c(1,-1)*expand[2]) / (1+2*expand[1])
-        extended_range_breaks(limits[1], limits[2], ...)
+        extended_range_breaks_(min(x), max(x), n, ...)
     }
 }
 
-#' Axis breaks inclusive of extreme values
-#'
-#' These scales draw pretty axis breaks that always include the extreme 
-#' values of the data.
-#' 
-#' @aliases scale_x_tufte scale_y_tufte
-#' @param breaks see \code{\link{scale_x_continuous}}
-#' @param expand see \code{\link{scale_x_continuous}}
-#' @param ... additional parameters passed to \code{\link{continuous_scale}}
-#' @family tufte
-#' @seealso range_breaks
-#' @author Baptise Auguie
-#' @rdname scale_tufte
-#' @examples
-#' (ggplot(mtcars, aes(x = wt + runif(1), y = mpg)) 
-#'  + geom_point()
-#'  + geom_rangeframe()
-#'  + theme_tufte()
-#'  + scale_x_tufte()
-#'  + scale_y_tufte()
-#'  )
-#' @export
-scale_x_tufte <-  function(breaks = scales_extended_range_breaks(expand), ...,
-                           expand = c(0.04, 0)) {
-  continuous_scale(c("x", "xmin", "xmax", "xend", "xintercept"),
-                   "position_c", identity, ...,
-                   breaks = breaks,
-                   expand = expand,
-                   guide = "none")
+# from scales package
+zero_range <- function (x, tol = 1000 * .Machine$double.eps) {
+  if (length(x) == 1)
+    return(TRUE)
+  if (length(x) != 2)
+    stop("x must be length 1 or 2")
+  if (any(is.na(x)))
+    return(NA)
+  if (x[1] == x[2])
+    return(TRUE)
+  if (all(is.infinite(x)))
+    return(FALSE)
+  m <- min(abs(x))
+  if (m == 0)
+    return(FALSE)
+  abs((x[1] - x[2])/m) < tol
 }
 
-#' @rdname scale_tufte
-#' @export
-scale_y_tufte <-  function(breaks = scales_extended_range_breaks(expand), ..., 
-                           expand = c(0.04, 0)) {
-  continuous_scale(c("y", "ymin", "ymay", "yend", "yintercept"),
-                   "position_c", identity, ...,
-                   breaks = breaks,
-                   expand = expand,
-                   guide = "none")
+# from scales package
+precision <- function (x) {
+  rng <- range(x, na.rm = TRUE)
+  span <- if (zero_range(rng))
+    abs(rng[1])
+  else diff(rng)
+  10^floor(log10(span))
 }
-
 
 #' Format numbers with automatic number of digits
 #'
@@ -253,9 +232,11 @@ scale_y_tufte <-  function(breaks = scales_extended_range_breaks(expand), ...,
 #' @rdname smart_digits
 #' @export
 smart_digits <- function(x, ...) {
-    x <- sort(x)
-    digits <- floor(log10(abs(diff(range(x)))))
-    format(x, digits = digits, ...)
+  if (length(x) == 0)
+    return(character())
+  accuracy <- precision(x)
+  x <- round(x / accuracy) * accuracy
+  format(x, ...)
 }
 
 #' @rdname smart_digits

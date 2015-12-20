@@ -9,7 +9,7 @@
 #' @export
 #' @family stata colour
 #' @examples
-#' library(scales)
+#' library("scales")
 #' show_col(stata_pal("s2color")(15))
 #' show_col(stata_pal("s1rcolor")(15))
 #' show_col(stata_pal("s1color")(15))
@@ -42,14 +42,6 @@ stata_pal <- function(scheme="s2color") {
 #' @family colour stata
 #' @rdname scale_stata
 #' @export
-#' @examples
-#' dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
-#' (d <- qplot(carat, price, data=dsamp, colour=clarity)
-#'                + theme_bw()
-#'                + scale_color_stata())
-#' (d <- qplot(carat, price, data=dsamp, colour=clarity)
-#'                + theme_bw()
-#'                + scale_color_stata("s1color"))
 scale_colour_stata <- function(scheme="s2color", ...) {
   discrete_scale("colour", "stata", stata_pal(scheme), ...)
 }
@@ -72,7 +64,7 @@ theme_stata_base <- function(base_size = 11, base_family = "sans") {
         rect = element_rect(size = 0.5, linetype = 1, fill="white", colour="black"),
         text = element_text(family = base_family, face = "plain", colour="black",
                             size = base_size, hjust = 0.5, vjust = 1, angle = 0,
-                            lineheight = 1),
+                            lineheight = 1, margin = margin(), debug = FALSE),
         title = element_text(),
         ## Axis
         axis.line = element_line(),
@@ -87,7 +79,6 @@ theme_stata_base <- function(base_size = 11, base_family = "sans") {
         # axis.ticks.length = stata_gsize$tiny,
         # axis.ticks.margin = stata_gsize$half_tiny,
         axis.ticks.length = unit(4/11, "lines"),
-        axis.ticks.margin = unit(2/11, "lines"),
         legend.background = element_rect(linetype=1),
         legend.margin = unit(1.2 / 100, "npc"),
         legend.key = element_rect(linetype=0),
@@ -206,34 +197,20 @@ theme_stata_colors <- function(scheme="s2color") {
 #' @references \url{http://www.stata.com/help.cgi?schemes}
 #'
 #' @examples
-#' dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
-#' q1 <- (qplot(carat, price, data=dsamp, colour=clarity)
-#'        + ggtitle("Diamonds"))
-#' q2 <- (qplot(carat, price, data=dsamp)
-#'        + facet_wrap(~ clarity)
-#'        + ggtitle("Diamonds"))
-#' q1mono <- (qplot(carat, price, shape=clarity, color=clarity,
-#'            data=dsamp)
-#'            + scale_shape_stata()
-#'            + ggtitle("Diamonds"))
-#' ## s2color
-#' (q1 + theme_stata() + scale_colour_stata(scheme = "s2color"))
-#' (q2 + theme_stata())
-#' ## s2mono
-#' (q1mono + theme_stata(scheme = "s2mono") + scale_colour_stata("mono"))
-#' (q2 + theme_stata(scheme = "s2mono"))
-#' ## s1color
-#' (q1 + theme_stata(scheme = "s1color") + scale_colour_stata("s1color"))
-#' (q2 + theme_stata(scheme = "s1color"))
-#' ## s1rcolor
-#' (q1 + theme_stata(scheme = "s1rcolor") + scale_colour_stata("s1rcolor"))
-#' (ggplot(dsamp, aes(x=carat, y=price)) + geom_point(colour="white")
-#'  + facet_wrap(~ clarity) + scale_colour_stata("s1rcolor")
-#'  + ggtitle("Diamonds"))
-#' ## s1mono
-#' (q1mono + theme_stata(scheme = "s1mono") + scale_colour_stata("mono"))
-#' (q2 + theme_stata(scheme = "s1mono"))
-#'
+#' library("ggplot2")
+#' p <- ggplot(mtcars) +
+#'      geom_point(aes(x = wt, y = mpg, colour=factor(gear))) +
+#'     facet_wrap(~am)
+#' # s2color
+#' p + theme_stata() + scale_colour_stata("s2color")
+#' # s2mono
+#' p + theme_stata(scheme = "s2mono") + scale_colour_stata("mono")
+#' # s1color
+#' p + theme_stata(scheme = "s2color") + scale_colour_stata("s1color")
+#' # s1rcolor
+#' p + theme_stata(scheme = "s1rcolor") + scale_colour_stata("s1rcolor")
+#' # s1mono
+#' p + theme_stata(scheme = "s1mono") + scale_colour_stata("mono")
 theme_stata <- function(base_size = 11, base_family = "sans", scheme="s2color") {
   ## Sizes
   (theme_stata_base(base_size=eval(base_size), base_family=base_family)
@@ -266,9 +243,11 @@ stata_shape_pal <- function() {
 #' @family shape stata
 #' @export
 #' @examples
-#' dsmall <- diamonds[sample(nrow(diamonds), 100), ]
-#' (d <- qplot(carat, price, data=dsmall, shape=cut)
-#'  + scale_shape_stata())
+#' library("ggplot2")
+#' p <- ggplot(mtcars) +
+#'      geom_point(aes(x = wt, y = mpg, shape = factor(gear))) +
+#'      facet_wrap(~am)
+#' p + theme_stata() + scale_shape_stata()
 scale_shape_stata <- function (...) {
   discrete_scale("shape", "stata", stata_shape_pal(), ...)
 }
@@ -295,13 +274,15 @@ stata_linetype_pal <- function() {
 #' @family linetype stata
 #' @export
 #' @examples
-#' library(reshape2) # for melt
-#' library(plyr) # for ddply
-#' library(ggplot2)
+#' library("reshape2") # for melt
+#' library("plyr") # for ddply
+#' library("ggplot2")
 #' ecm <- melt(economics, id = "date")
 #' rescale01 <- function(x) {(x - min(x)) / diff(range(x))}
 #' ecm <- ddply(ecm, "variable", transform, value = rescale01(value))
-#' qplot(date, value, data=ecm, geom="line", linetype=variable) + scale_linetype_stata()
+#' ggplot(ecm, aes(x = date, y = value, linetype=variable)) +
+#'   geom_line() +
+#'   scale_linetype_stata()
 scale_linetype_stata <- function (...)  {
   discrete_scale("linetype", "stata", stata_linetype_pal(), ...)
 }

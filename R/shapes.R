@@ -22,13 +22,15 @@
 #' line with an encircled plus sign.
 #'
 #' @examples
+#' library("ggplot2")
+#' p <- ggplot(mtcars) +
+#'      geom_point(aes(x = wt, y = mpg, shape = factor(gear))) +
+#'      facet_wrap(~am) +
+#'      theme_bw()
 #' # overlapping symbol palette
-#' dsamp <- diamonds[sample(nrow(diamonds), 100), ]
-#' (qplot(carat, price, data=dsamp, shape=cut)
-#' + theme_bw() + scale_shape_cleveland())
+#' p + scale_shape_cleveland()
 #' # non-overlapping symbol palette
-#' (qplot(carat, price, data=dsamp, shape=cut)
-#' + theme_bw() + scale_shape_cleveland(overlap=FALSE))
+#' p + scale_shape_cleveland(overlap=FALSE)
 #'
 #' @references
 #' Cleveland WS. \emph{The Elements of Graphing Data}. Revised Edition. Hobart Press, Summit, NJ, 1994, pp. 154-164, 234-239.
@@ -97,6 +99,7 @@ scale_shape_cleveland <- function(overlap=TRUE, ...) {
 #' "Discriminating Strata in Scatterplots", Journal of
 #' the American Statistical Assocation, \url{http://www.jstor.org/stable/2289649}
 #' @examples
+#' library("ggplot2")
 #' (ggplot(mtcars, aes(x=mpg, y=hp, shape=factor(cyl)))
 #'  + geom_point() + scale_shape_tremmel())
 #' @family shapes
@@ -193,6 +196,7 @@ tremmel_shape_pal <- function(overlap=FALSE, n3alt=TRUE) {
 #'
 #' @seealso \code{\link{tremmel_shape_pal}} for a description of the palette.
 #' @examples
+#' library("ggplot2")
 #' (ggplot(mtcars, aes(x=mpg, y=hp, shape=factor(cyl)))
 #'  + geom_point() + scale_shape_tremmel())
 #' (ggplot(mtcars, aes(x=mpg, y=hp, shape=factor(cyl)))

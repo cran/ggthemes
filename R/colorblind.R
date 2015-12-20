@@ -14,11 +14,12 @@
 #' @seealso The \pkg{dichromat} package, \code{\link[scales]{dichromat_pal}},
 #'  and \code{\link{scale_color_tableau}} for other colorblind palettes.
 #' @examples
+#' library("ggplot2")
 #' library(scales)
 #' show_col(colorblind_pal()(8))
-#' dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
-#' p <- qplot(carat, price, data=dsamp, colour=clarity) + theme_igray()
-#' p + scale_colour_colorblind()
+#' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
+#'      colour=factor(gear))) + facet_wrap(~am)
+#' p + theme_igray() + scale_colour_colorblind()
 colorblind_pal <- function() {
   manual_pal(unname(ggthemes_data$colorblind))
 }

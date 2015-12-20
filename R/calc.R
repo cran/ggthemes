@@ -6,16 +6,20 @@
 #' @export
 #' @family themes calc
 #' @examples
-#' dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
-#' (d <- qplot(carat, price, data=dsamp, colour=clarity)
-#'   + theme_calc()
-#'   + scale_color_calc())
-#' (d <- qplot(carat, price, data=dsamp, shape=cut)
-#'  + theme_calc()
-#'  + scale_shape_calc())
+#' library("ggplot2")
+#' p <- ggplot(mtcars) +
+#'      geom_point(aes(x = wt, y = mpg, colour=factor(gear))) +
+#'      facet_wrap(~am) + theme_calc()
+#' p + scale_color_calc()
+#' q <- ggplot(mtcars) +
+#'      geom_point(aes(x = wt, y = mpg, shape = factor(gear))) +
+#'      facet_wrap(~am) +
+#'      theme_calc()
+#' q + scale_shape_calc()
 theme_calc <- function(base_size = 10, base_family = "sans") {
   (theme_foundation(base_family = base_family, base_size = base_size)
-   + theme(rect = element_rect(colour = NA),
+   + theme(rect = element_rect(colour = "black", fill = "white"),
+           text = element_text(colour = "black"),
            line = element_line(colour = "gray70"),
            # 13 pt
            plot.title = element_text(size = rel(1.3)),
@@ -23,7 +27,7 @@ theme_calc <- function(base_size = 10, base_family = "sans") {
            legend.text = element_text(size = rel(1)),
            axis.title = element_text(size = rel(1)),
            axis.line = element_blank(),
-           panel.border = element_rect(colour = "gray70"),
+           panel.border = element_rect(fill = NA, colour = "gray70"),
            panel.grid.minor = element_blank(),
            panel.grid.major.x = element_blank(),
            legend.position = "right",
@@ -74,6 +78,7 @@ scale_color_calc <- scale_colour_calc
 #' @export
 #' @family shapes calc
 #' @examples
+#' library("ggplot2")
 #' show_shapes(calc_shape_pal()(15))
 calc_shape_pal <- function() {
     values <- ggthemes_data$calc$shapes
