@@ -1,5 +1,5 @@
 Package: ggthemes
-Version: 3.0.1
+Version: 3.0.2
 Title: Extra Themes, Scales and Geoms for 'ggplot2'
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     email = "jeffrey.arnold@gmail.com"),
@@ -37,7 +37,7 @@ Collate: 'banking.R' 'base.R' 'calc.R' 'colorblind.R' 'economist.R'
 RoxygenNote: 5.0.1
 LazyData: true
 NeedsCompilation: no
-Packaged: 2016-01-09 23:10:26 UTC; jrnold
+Packaged: 2016-02-26 05:52:33 UTC; jrnold
 Author: Jeffrey B. Arnold [aut, cre],
   Gergely Daroczi [ctb],
   Bo Werth [ctb],
@@ -49,4 +49,4 @@ Author: Jeffrey B. Arnold [aut, cre],
   Justin Talbot [ctb] (Code from the labeling package)
 Maintainer: Jeffrey B. Arnold <jeffrey.arnold@gmail.com>
 Repository: CRAN
-Date/Publication: 2016-01-10 09:08:58
+Date/Publication: 2016-02-26 08:24:31

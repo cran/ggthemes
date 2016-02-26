@@ -1,6 +1,6 @@
-57c23c86531ed6e306199ffda90c0cdd *DESCRIPTION
-10c11b397b2d1f315480011243e16412 *NAMESPACE
-ed6212d49cc9492ff20c31909572af16 *NEWS
+061d1953c5b7344dafe4b13a56fa1d2e *DESCRIPTION
+6ea49f2ece9b50fdab774e7b658ec01d *NAMESPACE
+e8d4aa8dc5dbbb45c96c9ab9af35fbc2 *NEWS
 75819f4ff53007a6bfeeadd7caec0cbc *R/banking.R
 a14bc4c7adce0fc0305ab40a77636548 *R/base.R
 a2d00e675571bc1b0f380c557fbf5513 *R/calc.R
@@ -12,7 +12,7 @@ a989fb039863692b7dc35d1d390136da *R/economist.R
 2aaeadabb2c134c1f3cefe927c75dd3b *R/gdocs.R
 67e9930a9bb67e27f5c74714a1c37e17 *R/geom-rangeframe.R
 f2428c42ffd9d183b3a92051d6c40525 *R/geom-tufteboxplot.R
-8da3c04a21fa6b4ecf175b3e35c379b7 *R/ggthemes-data.R
+5f638f87332d4bff58fdc6ab0da6ea3d *R/ggthemes-data.R
 ca80e45b6c064a9768b4b41de69c243e *R/ggthemes-package.R
 bc0ab2b31865b8731f80c909910d1899 *R/hc.R
 5d0ffeb9f9495501adc3d1ab63e12fff *R/igray.R
@@ -33,7 +33,7 @@ cb80601c02a9dc7f9cccf9439bbd7863 *R/utils.R
 aa2b7126fa88a6a44dafc9847305b4a8 *build/vignette.rds
 972e06accb4e6131e13a943b5ea2010b *inst/doc/ggthemes.R
 6352fda9fbc4e5bdc9917f9365d2fdf4 *inst/doc/ggthemes.Rmd
-79c6dce36a39bae4cc0f1a2f95952c8f *inst/doc/ggthemes.html
+78360de3214a30936033c1e15b9893d7 *inst/doc/ggthemes.html
 eac7176f670fd32b000046e5086b2405 *man/bank_slopes.Rd
 dbe1a9fb2d76712b20100680d1282ad9 *man/calc_pal.Rd
 c454852f942dd3c723ea989862f6d884 *man/calc_shape_pal.Rd
@@ -45,8 +45,8 @@ b689052d44081d9691eb8e3f30fc7bf2 *man/colorblind.Rd
 08904abd7ff3a23eacfff92dfab38d67 *man/few_pal.Rd
 4b9d535eb5924d89653cf04779c5d7ed *man/fivethirtyeight_pal.Rd
 29e30641a13f44504c01c24814f76fdc *man/gdocs_pal.Rd
-197ab5e0876747bc578d6a59ab1f8ab3 *man/geom_rangeframe.Rd
-c5fe15833642bb9782dd6807ab14237b *man/geom_tufteboxplot.Rd
+f2aa853c775380c7daf7626011940304 *man/geom_rangeframe.Rd
+ea454b5f701ed73a34bac6c879c0050d *man/geom_tufteboxplot.Rd
 5ce031fceae49bdd4bbc5e6eed71e113 *man/ggthemes.Rd
 b9a09fb488d7ca5732323e37e7128e7b *man/ggthemes_data.Rd
 d527ba82cb35d8029eaed4ba58edeec4 *man/hc_pal.Rd
@@ -78,7 +78,7 @@ eb6d9a07845ed86e81f97a94d8935864 *man/show_linetypes.Rd
 6d7289dea3dcfab6799874c046755dc3 *man/smart_digits.Rd
 e73176a76a98577aff09ed01a60835da *man/solarized_pal.Rd
 5f7addc5fe2db27e5fa79dd6949fe87c *man/solarized_rebase.Rd
-2aaf24f3d19dc07cbb95a06a7dbb0740 *man/stat_fivenumber.Rd
+e0ccb427f6a34c266895c60ecc09b56e *man/stat_fivenumber.Rd
 87a36a370c5b8ba3de65d2f055cb0315 *man/stata_linetype_pal.Rd
 346459fca8613796a5890a382d0d4c2a *man/stata_pal.Rd
 602f486fca72a5eff21418abcbb209cf *man/stata_shape_pal.Rd
