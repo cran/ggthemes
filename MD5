@@ -1,6 +1,6 @@
-061d1953c5b7344dafe4b13a56fa1d2e *DESCRIPTION
+37b60e69bb09c6f9b33ee0c98d163c61 *DESCRIPTION
 6ea49f2ece9b50fdab774e7b658ec01d *NAMESPACE
-e8d4aa8dc5dbbb45c96c9ab9af35fbc2 *NEWS
+9c80c13fd4862f15054a00489c6ed9d8 *NEWS
 75819f4ff53007a6bfeeadd7caec0cbc *R/banking.R
 a14bc4c7adce0fc0305ab40a77636548 *R/base.R
 a2d00e675571bc1b0f380c557fbf5513 *R/calc.R
@@ -29,11 +29,11 @@ aea0c25e3330a41b3874371847e2b682 *R/theme-map.R
 cddf1c99dc8124b01273300b03b62777 *R/theme-solid.R
 0d8e82c7e49e014196d48af4e79b7520 *R/tufte.R
 cb80601c02a9dc7f9cccf9439bbd7863 *R/utils.R
-637b494ad86be0e5da988905ecdefbb5 *R/wsj.R
-aa2b7126fa88a6a44dafc9847305b4a8 *build/vignette.rds
+a5394f6ab0fc08f9b5006fc46ba65b55 *R/wsj.R
+bdf4debd5af1010f9d0ccebd4de4b6d8 *build/vignette.rds
 972e06accb4e6131e13a943b5ea2010b *inst/doc/ggthemes.R
 6352fda9fbc4e5bdc9917f9365d2fdf4 *inst/doc/ggthemes.Rmd
-78360de3214a30936033c1e15b9893d7 *inst/doc/ggthemes.html
+7d05c2a0e24ae4aff0621c99d4896964 *inst/doc/ggthemes.html
 eac7176f670fd32b000046e5086b2405 *man/bank_slopes.Rd
 dbe1a9fb2d76712b20100680d1282ad9 *man/calc_pal.Rd
 c454852f942dd3c723ea989862f6d884 *man/calc_shape_pal.Rd
@@ -103,11 +103,9 @@ b8077e1a8373d4db924c146a3f0424b5 *man/theme_solarized.Rd
 7a05a3e13872102ceafc9770e06979e8 *man/theme_solid.Rd
 89237572a2620f78ec0f104dc22d6190 *man/theme_stata.Rd
 c9411d27a1cce16819d4f398b83b8349 *man/theme_tufte.Rd
-0fb7430c424af18577cee02c3cbfeae4 *man/theme_wsj.Rd
+11d81e7f38e7237fb35de01fb3160f71 *man/theme_wsj.Rd
 e4cf5b2f045ec1ee0cde1f7cf2d99a80 *man/tremmel_shape_pal.Rd
-0277cefe8b2ab0ea4b2b758cf19014d8 *man/wsj_pal.Rd
-d220aef089ea1a857ed208d7a1bffc96 *tests/testthat.R
-da2d9bad272edc0d7c7e263610b020fb *tests/testthat/test-linters.R
+3c0548cad87ecf4d8004a2d2559b20ff *man/wsj_pal.Rd
 5325928a47307dec5738e73028b836ab *vignettes/children/contribute.Rmd
 eec0f942de2723891c961e37539b58eb *vignettes/children/examples.Rmd
 5388b655850929ebce90b90928f3994e *vignettes/children/install.Rmd
