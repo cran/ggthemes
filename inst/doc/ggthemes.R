@@ -86,6 +86,17 @@ p2 + geom_smooth(method = "lm", se = FALSE) +
   theme_fivethirtyeight()
 
 
+## ----paultol-------------------------------------------------------------
+p2 + geom_smooth(method = "lm", se = FALSE) +
+  scale_color_ptol("cyl") +
+  theme_minimal()
+
+## ----paultol-barplot-----------------------------------------------------
+ggplot(diamonds, aes(x = clarity, fill = cut)) +
+  geom_bar() +
+  scale_fill_ptol() +
+  theme_minimal()
+
 ## ----tableau-------------------------------------------------------------
 p2 + theme_igray() + scale_colour_tableau()
 

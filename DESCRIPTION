@@ -1,5 +1,5 @@
 Package: ggthemes
-Version: 3.0.3
+Version: 3.2.0
 Title: Extra Themes, Scales and Geoms for 'ggplot2'
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     email = "jeffrey.arnold@gmail.com"),
@@ -12,7 +12,8 @@ Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     person("Hadley", "Wickham", role = c("ctb", "cph"),
     comment = "Code from the ggplot2 package."),
     person("Justin",  "Talbot", role = "ctb",
-    comment = "Code from the labeling package"))
+    comment = "Code from the labeling package"),
+    person("Joshua", "London", role = "ctb"))
 Depends: R (>= 3.0.0),
 Imports: assertthat, colorspace, ggplot2 (>= 2.0.0), graphics, grid,
         methods, scales
@@ -30,14 +31,14 @@ BugReports: http://github.com/jrnold/ggthemes
 Collate: 'banking.R' 'base.R' 'calc.R' 'colorblind.R' 'economist.R'
         'excel.R' 'few.R' 'ggthemes-data.R' 'ggthemes-package.R'
         'fivethirtyeight.R' 'gdocs.R' 'geom-rangeframe.R'
-        'geom-tufteboxplot.R' 'hc.R' 'igray.R' 'pander.R'
+        'geom-tufteboxplot.R' 'hc.R' 'igray.R' 'pander.R' 'ptol.R'
         'scale-tufte.R' 'shapes.R' 'show.R' 'solarized.R'
         'stat-fivenumber.R' 'stata.R' 'tableau.R' 'theme-foundation.R'
         'theme-map.R' 'theme-solid.R' 'tufte.R' 'utils.R' 'wsj.R'
 RoxygenNote: 5.0.1
 LazyData: true
 NeedsCompilation: no
-Packaged: 2016-04-09 01:30:18 UTC; jrnold
+Packaged: 2016-07-11 08:29:10 UTC; jrnold
 Author: Jeffrey B. Arnold [aut, cre],
   Gergely Daroczi [ctb],
   Bo Werth [ctb],
@@ -46,7 +47,8 @@ Author: Jeffrey B. Arnold [aut, cre],
   Baptise Auguie [ctb],
   Bob Rudis [ctb],
   Hadley Wickham [ctb, cph] (Code from the ggplot2 package.),
-  Justin Talbot [ctb] (Code from the labeling package)
+  Justin Talbot [ctb] (Code from the labeling package),
+  Joshua London [ctb]
 Maintainer: Jeffrey B. Arnold <jeffrey.arnold@gmail.com>
 Repository: CRAN
-Date/Publication: 2016-04-09 09:39:05
+Date/Publication: 2016-07-11 11:37:00
