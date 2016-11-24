@@ -1,5 +1,5 @@
 Package: ggthemes
-Version: 3.2.0
+Version: 3.3.0
 Title: Extra Themes, Scales and Geoms for 'ggplot2'
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     email = "jeffrey.arnold@gmail.com"),
@@ -15,7 +15,7 @@ Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     comment = "Code from the labeling package"),
     person("Joshua", "London", role = "ctb"))
 Depends: R (>= 3.0.0),
-Imports: assertthat, colorspace, ggplot2 (>= 2.0.0), graphics, grid,
+Imports: assertthat, colorspace, ggplot2 (>= 2.2.0), graphics, grid,
         methods, scales
 Suggests: extrafont, knitr, lintr, maps, mapproj, pander, plyr,
         reshape2, rmarkdown, testthat
@@ -38,7 +38,7 @@ Collate: 'banking.R' 'base.R' 'calc.R' 'colorblind.R' 'economist.R'
 RoxygenNote: 5.0.1
 LazyData: true
 NeedsCompilation: no
-Packaged: 2016-07-11 08:29:10 UTC; jrnold
+Packaged: 2016-11-24 03:01:45 UTC; jrnold
 Author: Jeffrey B. Arnold [aut, cre],
   Gergely Daroczi [ctb],
   Bo Werth [ctb],
@@ -51,4 +51,4 @@ Author: Jeffrey B. Arnold [aut, cre],
   Joshua London [ctb]
 Maintainer: Jeffrey B. Arnold <jeffrey.arnold@gmail.com>
 Repository: CRAN
-Date/Publication: 2016-07-11 11:37:00
+Date/Publication: 2016-11-24 11:31:07

@@ -7,7 +7,7 @@
 \title{Tufte's Box Blot}
 \usage{
 geom_tufteboxplot(mapping = NULL, data = NULL, stat = "fivenumber",
-  position = "identity", outlier.colour = "black", outlier.shape = 19,
+  position = "dodge", outlier.colour = "black", outlier.shape = 19,
   outlier.size = 1.5, outlier.stroke = 0.5, voffset = 0.01,
   hoffset = 0.005, na.rm = FALSE, show.legend = NA, inherit.aes = TRUE,
   median.type = "point", whisker.type = "line", ...)
@@ -50,8 +50,8 @@ a call to a position adjustment function.}
 
 \item{hoffset}{controls how much the interquartile line is offset from the whiskers when \code{median.type = 'line'}. This is a fraction of the range of \code{x}.}
 
-\item{na.rm}{If \code{FALSE} (the default), removes missing values with
-a warning.  If \code{TRUE} silently removes missing values.}
+\item{na.rm}{If \code{FALSE}, the default, missing values are removed with
+a warning. If \code{TRUE}, missing values are silently removed.}
 
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.
