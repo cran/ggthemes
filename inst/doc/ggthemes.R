@@ -5,6 +5,7 @@ opts_chunk$set(fig.width = 5.25, fig.height = 3.75, cache=FALSE)
 ## ----dsamp---------------------------------------------------------------
 library("ggplot2")
 library("ggthemes")
+library("scales")
 
 p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
@@ -45,7 +46,8 @@ p4 + theme_tufte(ticks=FALSE) +
 
 
 ## ----economist-----------------------------------------------------------
-p2 + theme_economist() + scale_colour_economist() 
+p2 + theme_economist() + scale_colour_economist() +
+  scale_y_continuous(position = "right")
 
 ## ----solarized-light-----------------------------------------------------
 p2 + theme_solarized() +
@@ -178,4 +180,8 @@ ggplot() +
   coord_map("albers", lat0 = 39, lat1 = 45) +
   theme_map()
 
+
+## ------------------------------------------------------------------------
+show_col(canva_pal("Fresh and bright")(4))
+show_col(canva_pal("Timeless and nautical")(4))
 
