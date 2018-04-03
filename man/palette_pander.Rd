@@ -17,9 +17,14 @@ The \pkg{pander} ships with a default colorblind and printer-friendly
 color palette borrowed from \url{http://jfly.iam.u-tokyo.ac.jp/color/}.
 }
 \examples{
+
+
 \dontrun{
 palette_pander(TRUE)
 }
+
+
+
 }
 \seealso{
 Other colour pander: \code{\link{scale_color_pander}}

@@ -29,6 +29,8 @@ installed on your system, then you can use them with the package
 \bold{extrafont}.
 }
 \examples{
+
+
 library("ggplot2")
 # with ticks and range frames
 (ggplot(mtcars, aes(wt, mpg))
@@ -49,6 +51,9 @@ library(extrafont)
  + geom_point() + geom_rangeframe()
  + theme_tufte(base_family='GillSans'))
 }
+
+
+
 }
 \references{
 Tufte, Edward R. (2001) The Visual Display of

@@ -80,6 +80,8 @@ requiring optimization.
 }
 
 \examples{
+
+
 library("ggplot2")
 # Use the classic sunspot data from Cleveland's original paper
 x <- seq_along(sunspot.year)
@@ -95,6 +97,9 @@ m + coord_fixed(ratio = ratio)
 ## Using culling
 ## Average Absolute Slope
 bank_slopes(x, y, method='as')
+
+
+
 }
 \references{
 Cleveland, W. S., M. E. McGill, and R. McGill. The Shape Parameter

@@ -10,8 +10,13 @@ gdocs_pal()
 Color palettes from Google Docs.
 }
 \examples{
+
+
 library("scales")
 show_col(gdocs_pal()(20))
+
+
+
 }
 \seealso{
 Other colour gdocs: \code{\link{scale_fill_gdocs}}

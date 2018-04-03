@@ -4,7 +4,7 @@
 \name{geom_tufteboxplot}
 \alias{geom_tufteboxplot}
 \alias{GeomTufteboxplot}
-\title{Tufte's Box Blot}
+\title{Tufte's Box Plot}
 \usage{
 geom_tufteboxplot(mapping = NULL, data = NULL, stat = "fivenumber",
   position = "dodge", outlier.colour = "black", outlier.shape = 19,
@@ -90,6 +90,9 @@ Edward Tufte's revisions of the box plot as described in
 }
 
 \examples{
+### Keywords: datasets
+
+
 library("ggplot2")
 p <- ggplot(mtcars, aes(factor(cyl), mpg))
 ## with a point for the median and lines for whiskers
@@ -100,6 +103,9 @@ p + geom_tufteboxplot(median.type = "line", whisker.type = "point", hoffset = 0)
 p + geom_tufteboxplot(median.type = "line", hoffset = 0, width = 3)
 ## with an offset line for the interquartile range and lines for whiskers
 p + geom_tufteboxplot(median.type='line')
+
+
+
 
 }
 \references{

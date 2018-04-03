@@ -25,6 +25,8 @@ for specific graph types, a feature which \pkg{ggplot2} does not directly
 support.
 }
 \examples{
+
+
 library("ggplot2")
 p <- ggplot(mtcars) +
      geom_point(aes(x = wt, y = mpg, colour=factor(gear))) +
@@ -39,6 +41,9 @@ p + theme_stata(scheme = "s2color") + scale_colour_stata("s1color")
 p + theme_stata(scheme = "s1rcolor") + scale_colour_stata("s1rcolor")
 # s1mono
 p + theme_stata(scheme = "s1mono") + scale_colour_stata("mono")
+
+
+
 }
 \references{
 \url{http://www.stata.com/help.cgi?schemes}

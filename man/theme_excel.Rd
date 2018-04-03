@@ -21,6 +21,8 @@ Theme to replicate the ugly monstrosity that was the old
 gray-background Excel chart. Please never use this.
 }
 \examples{
+
+
 library("ggplot2")
 # Old line color
 p <- ggplot(mtcars) +
@@ -33,5 +35,8 @@ ggplot(mpg, aes(x = class, fill = drv)) +
   geom_bar() +
   scale_fill_excel('fill') +
   theme_excel()
+
+
+
 
 }

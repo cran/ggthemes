@@ -29,6 +29,9 @@ Following Tremmel (1995), I replace the circle with a vertical
 line with an encircled plus sign.
 }
 \examples{
+###   (discrete).
+
+
 library("ggplot2")
 p <- ggplot(mtcars) +
      geom_point(aes(x = wt, y = mpg, shape = factor(gear))) +
@@ -38,6 +41,9 @@ p <- ggplot(mtcars) +
 p + scale_shape_cleveland()
 # non-overlapping symbol palette
 p + scale_shape_cleveland(overlap=FALSE)
+
+
+
 
 }
 \references{

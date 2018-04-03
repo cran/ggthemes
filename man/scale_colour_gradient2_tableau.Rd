@@ -32,6 +32,9 @@ colour bar, or \code{'legend'} for discrete colour legend.}
 Tableau diverging colour scales (continuous)
 }
 \examples{
+###   scale_color_gradient2_tableau
+
+
 library("ggplot2")
 df <- data.frame(
 x = runif(100),
@@ -44,6 +47,9 @@ p <- ggplot(df, aes(x, y)) + geom_point(aes(colour = z2))
 p + scale_colour_gradient2_tableau()
 p + scale_colour_gradient2_tableau('Orange-Blue')
 p + scale_colour_gradient2_tableau('Temperature')
+
+
+
 }
 \seealso{
 Other colour tableau: \code{\link{scale_colour_gradient_tableau}},

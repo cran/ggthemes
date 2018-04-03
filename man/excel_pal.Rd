@@ -22,10 +22,15 @@ The color palettes are
 }
 }
 \examples{
+
+
 library("scales")
 show_col(excel_pal()(8))
 show_col(excel_pal('fill')(8))
 show_col(excel_pal('new')(10))
+
+
+
 }
 \seealso{
 Other colour excel: \code{\link{scale_fill_excel}}
