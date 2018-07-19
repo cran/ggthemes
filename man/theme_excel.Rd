@@ -2,7 +2,7 @@
 % Please edit documentation in R/excel.R
 \name{theme_excel}
 \alias{theme_excel}
-\title{ggplot color theme based on old Excel plots}
+\title{ggplot theme based on old Excel plots}
 \usage{
 theme_excel(base_size = 12, base_family = "", horizontal = TRUE)
 }
@@ -19,19 +19,24 @@ An object of class \code{\link{theme}}.
 \description{
 Theme to replicate the ugly monstrosity that was the old
 gray-background Excel chart. Please never use this.
+This should be combined with
 }
 \examples{
 library("ggplot2")
 
-# Old line color
+# Line and scatter plot colors
 p <- ggplot(mtcars) +
      geom_point(aes(x = wt, y = mpg, colour = factor(gear))) +
      facet_wrap(~am)
 p + theme_excel() + scale_colour_excel()
 
-# Old fill color palette
+# Bar plot (area/fill) colors
 ggplot(mpg, aes(x = class, fill = drv)) +
   geom_bar() +
-  scale_fill_excel("fill") +
+  scale_fill_excel() +
   theme_excel()
 }
+\seealso{
+Other themes excel: \code{\link{theme_excel_new}}
+}
+\concept{themes excel}

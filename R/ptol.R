@@ -1,7 +1,7 @@
 #' Color Palettes from Paul Tol's "Colour Schemes"
 #'
 #' Qualitative color palettes from Paul Tol,
-#' \href{https://personal.sron.nl/~pault/colourschemes.pdf}{"Colour Schemes"}.
+#' \href{https://personal.sron.nl/~pault/}{"Colour Schemes"}.
 #'
 #' Incorporation of the palette into an R package was originally inspired by
 #' Peter Carl's [Paul Tol 21 Gun Salute](https://tradeblotter.wordpress.com/2013/02/28/the-paul-tol-21-color-salute/)
@@ -10,17 +10,17 @@
 #' @family colour ptol
 #' @references
 #' Paul Tol. 2012. "Colour Schemes." SRON Technical Note, SRON/EPS/TN/09-002.
-#'  \url{https://personal.sron.nl/~pault/colourschemes.pdf}
+#'  \url{https://personal.sron.nl/~pault/data/colourschemes.pdf}
 #' @example inst/examples/ex-ptol_pal.R
 ptol_pal <- function() {
-  function(n) {
-    if (n > 12) {
-      stop(sprintf("%s is greater than the max number of colors", n))
-    } else if (n < 1) {
-      stop("the number of colors cannot be zero")
-    }
-    ggthemes_data$ptol$qualitative[[n]]
+  colors <- ggthemes::ggthemes_data[["ptol"]][["qualitative"]]
+  max_n <- length(colors)
+  f <- function(n) {
+    check_pal_n(n, max_n)
+    colors[[n]]
   }
+  attr(f, "max_n") <- max_n
+  f
 }
 
 #' Color Scales from Paul Tol's "Colour Schemes
@@ -32,6 +32,7 @@ ptol_pal <- function() {
 #' @family colour ptol
 #' @rdname scale_ptol
 #' @export
+#' @example inst/examples/ex-scale_colour_ptol.R
 scale_colour_ptol <- function(...) {
   discrete_scale("colour", "ptol", ptol_pal(), ...)
 }

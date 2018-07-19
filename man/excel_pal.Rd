@@ -2,32 +2,28 @@
 % Please edit documentation in R/excel.R
 \name{excel_pal}
 \alias{excel_pal}
-\title{Excel color palette (discrete)}
+\title{Excel 97 ugly color palettes (discrete)}
 \usage{
-excel_pal(palette = "line")
+excel_pal(line = TRUE)
 }
 \arguments{
-\item{palette}{One of \code{'old'}, \code{'fill'}, or \code{'new'}.}
+\item{line}{If \code{TRUE}, use the palette for lines and points. Otherwise,
+use the palette for area.}
 }
 \description{
-Color palettes from Excel, both current and the pre-2007 ugly
-palettes.
-}
-\details{
-The color palettes are
-\describe{
-\item{line}{Excel 2003 default color palette. seven colors.}
-\item{fill}{Excel 2003 bar chart color palette. seven colors.}
-\item{new}{Color palette from newer Excel versions. 10 colors.}
-}
+The color palettes used in Microsoft Excel 97 (and up until Excel 2007).
+Use this for that classic ugly look and feel. For ironic purposes only.
+3D bars and pies not included. Please never use this color palette.
 }
 \examples{
 library("scales")
 
-show_col(excel_pal()(8))
-show_col(excel_pal("fill")(8))
-show_col(excel_pal("new")(10))
+show_col(excel_pal()(7))
+show_col(excel_pal(line = FALSE)(7))
 }
 \seealso{
-Other colour excel: \code{\link{scale_fill_excel}}
+Other colour excel: \code{\link{excel_new_pal}},
+  \code{\link{scale_colour_excel_new}},
+  \code{\link{scale_fill_excel}}
 }
+\concept{colour excel}

@@ -20,9 +20,13 @@ library("ggplot2")
 p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
      colour = factor(gear))) + facet_wrap(~am)
 p + theme_base()
+# Change values of par
+par(fg = "blue", bg = "gray", col.lab = "red", font.lab = 3)
+p + theme_base()
 }
 \seealso{
 Other themes: \code{\link{theme_foundation}},
   \code{\link{theme_igray}}, \code{\link{theme_par}},
   \code{\link{theme_solid}}
 }
+\concept{themes}

@@ -4,39 +4,85 @@
 \alias{scale_colour_tableau}
 \alias{scale_fill_tableau}
 \alias{scale_color_tableau}
-\title{Tableau color scales.}
+\title{Tableau color scales}
 \usage{
-scale_colour_tableau(palette = "tableau10", ...)
+scale_colour_tableau(palette = "Tableau 10", ...)
 
-scale_fill_tableau(palette = "tableau10", ...)
+scale_fill_tableau(palette = "Tableau 10", ...)
 
-scale_color_tableau(palette = "tableau10", ...)
+scale_color_tableau(palette = "Tableau 10", ...)
 }
 \arguments{
-\item{palette}{Palette name.}
+\item{palette}{Palette name. See Details for available palettes.}
 
-\item{...}{Other arguments passed on to \code{\link{discrete_scale}}
-to control name, limits, breaks, labels and so forth.}
+\item{...}{Arguments passed on to \code{discrete_scale}
+\describe{
+  \item{breaks}{One of:
+\itemize{
+\item \code{NULL} for no breaks
+\item \code{waiver()} for the default breaks computed by the
+transformation object
+\item A character vector of breaks
+\item A function that takes the limits as input and returns breaks
+as output
+}}
+  \item{limits}{A character vector that defines possible values of the scale
+and their order.}
+  \item{drop}{Should unused factor levels be omitted from the scale?
+The default, \code{TRUE}, uses the levels that appear in the data;
+\code{FALSE} uses all the levels in the factor.}
+  \item{na.translate}{Unlike continuous scales, discrete scales can easily show
+missing values, and do so by default. If you want to remove missing values
+from a discrete scale, specify \code{na.translate = FALSE}.}
+  \item{na.value}{If \code{na.translate = TRUE}, what value aesthetic
+value should missing be displayed as? Does not apply to position scales
+where \code{NA} is always placed at the far right.}
+  \item{scale_name}{The name of the scale}
+  \item{palette}{A palette function that when called with a single integer
+argument (the number of levels in the scale) returns the values that
+they should take}
+  \item{name}{The name of the scale. Used as axis or legend title. If
+\code{waiver()}, the default, the name of the scale is taken from the first
+mapping used for that aesthetic. If \code{NULL}, the legend title will be
+omitted.}
+  \item{labels}{One of:
+\itemize{
+\item \code{NULL} for no labels
+\item \code{waiver()} for the default labels computed by the
+transformation object
+\item A character vector giving labels (must be same length as \code{breaks})
+\item A function that takes the breaks as input and returns labels
+as output
+}}
+  \item{expand}{Vector of range expansion constants used to add some
+padding around the data, to ensure that they are placed some distance
+away from the axes. Use the convenience function \code{\link[=expand_scale]{expand_scale()}}
+to generate the values for the \code{expand} argument. The defaults are to
+expand the scale by 5\% on each side for continuous variables, and by
+0.6 units on each side for discrete variables.}
+  \item{guide}{A function used to create a guide or its name. See
+\code{\link[=guides]{guides()}} for more info.}
+  \item{position}{The position of the axis. "left" or "right" for vertical
+scales, "top" or "bottom" for horizontal scales}
+  \item{super}{The super class to use for the constructed scale}
+}}
 }
 \description{
-See \code{\link{tableau_color_pal}} for details.
+Categorical color scales from Tableau.
 }
 \examples{
 library("ggplot2")
 
 p <- ggplot(mtcars) +
-     geom_point(aes(x = wt, y = mpg, colour = factor(gear))) +
-     facet_wrap(~am)
-p + scale_colour_tableau()
-p + scale_colour_tableau("tableau20")
-p + scale_colour_tableau("tableau10medium")
-p + scale_colour_tableau("tableau10light")
-p + scale_colour_tableau("colorblind10")
-p + scale_colour_tableau("trafficlight")
-p + scale_colour_tableau("purplegray12")
-p + scale_colour_tableau("bluered12")
-p + scale_colour_tableau("greenorange12")
-p + scale_colour_tableau("cyclic")
+  geom_point(aes(x = wt, y = mpg, colour = factor(gear))) +
+  facet_wrap(~am) +
+  theme_igray()
+
+palettes <- ggthemes_data[["tableau"]][["color-palettes"]][["regular"]]
+for (palette in head(names(palettes), 3L)) {
+  print(p + scale_colour_tableau(palette) +
+          ggtitle(palette))
+}
 }
 \seealso{
 \code{\link{tableau_color_pal}} for references.
@@ -44,6 +90,6 @@ p + scale_colour_tableau("cyclic")
 Other colour tableau: \code{\link{scale_colour_gradient2_tableau}},
   \code{\link{scale_colour_gradient_tableau}},
   \code{\link{tableau_color_pal}},
-  \code{\link{tableau_div_gradient_pal}},
-  \code{\link{tableau_seq_gradient_pal}}
+  \code{\link{tableau_gradient_pal}}
 }
+\concept{colour tableau}
