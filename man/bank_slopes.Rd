@@ -4,8 +4,8 @@
 \alias{bank_slopes}
 \title{Bank Slopes to 45 degrees}
 \usage{
-bank_slopes(x, y, cull = FALSE, weight = NULL, method = c("ms", "as"),
-  ...)
+bank_slopes(x, y, cull = FALSE, weight = NULL, method = c("ms",
+  "as"), ...)
 }
 \arguments{
 \item{x}{x values}
@@ -40,7 +40,7 @@ are generally the median of the various methods provided here.
 
 As written, all of these methods calculate the aspect ratio (x
 /y), but \code{bank_slopes} will return (y / x) to be compatible
-with \code{link[ggplot2]{coord_fixed}}.
+with \code{link[ggplot2]{coord_fixed()}}.
 
 \strong{Median Absolute Slopes Banking}
 
@@ -111,5 +111,5 @@ Graphs.' Journal of Computational and Statistical Graphics.
 Cleveland, W. S. 1994. The Elements of Graphing Data, Revised Edition.
 }
 \seealso{
-\code{\link[lattice]{banking}}
+\code{\link[lattice]{banking}()}
 }

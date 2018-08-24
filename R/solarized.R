@@ -8,12 +8,11 @@
 #'
 #' @keywords internal
 solarized_rebase <- function(light = TRUE) {
-  if (light) {
-    rebase <- ggthemes::ggthemes_data$solarized$Base[c(paste0("base", 3:0),
-                                                  paste0("base0", 0:3))]
+  basecolors <- deframe(ggthemes::ggthemes_data$solarized$Base)
+  rebase <- if (light) {
+    basecolors[c(paste0("base", 3:0), paste0("base0", 0:3))]
   } else {
-    rebase <- ggthemes::ggthemes_data$solarized$Base[c(paste0("base0", 3:0),
-                                                  paste0("base", 0:3))]
+    basecolors[c(paste0("base0", 3:0), paste0("base", 0:3))]
   }
   names(rebase) <- paste0("rebase", c(paste0("0", 3:0), 0:3))
   rebase
@@ -53,7 +52,7 @@ solarized_pal <- function(accent = "blue") {
 
 #' Solarized color scales
 #'
-#' See \code{\link{solarized_pal}} for details.
+#' See \code{\link{solarized_pal}()} for details.
 #'
 #' @inheritParams ggplot2::scale_colour_hue
 #' @inheritParams solarized_pal
@@ -84,8 +83,8 @@ scale_color_solarized <- scale_colour_solarized
 #' Beamer color theme.
 #' \url{https://github.com/jrnold/beamercolorthemesolarized}.
 #' There are two variations: \code{theme_solarized} is similar to
-#' to \code{\link{theme_bw}}, while \code{theme_solarized_2} is similar to
-#' \code{\link{theme_gray}}.
+#' to \code{\link[ggplot2]{theme_bw}()}, while \code{theme_solarized_2()} is
+#' similar to \code{\link[ggplot2]{theme_gray}()}.
 #'
 #' @rdname theme_solarized
 #' @inheritParams ggplot2::theme_grey

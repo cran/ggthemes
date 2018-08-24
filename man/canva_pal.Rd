@@ -7,19 +7,21 @@
 canva_pal(palette = "Fresh and bright")
 }
 \arguments{
-\item{palette}{Palette name. See the names of \code{\link{canva_palettes}} for valid names.}
+\item{palette}{Palette name. See the names of \code{\link{canva_palettes}()}
+for valid names.}
 }
 \value{
 A function that takes a single value, the number of colors to use.
 }
 \description{
-150+ color palettes from canva.com. See \code{\link{canva_palettes}}.
+150+ color palettes from canva.com. See \code{\link{canva_palettes}()}.
 }
 \examples{
 require("ggplot2")
 require("purrr")
 require("tibble")
 require("scales")
+require("dplyr")
 canva_df <- map2_df(canva_palettes, names(canva_palettes),
                     ~ tibble(colors = .x, .id = seq_along(colors),
                              palette = .y))
