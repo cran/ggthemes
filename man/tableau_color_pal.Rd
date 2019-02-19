@@ -5,7 +5,7 @@
 \title{Tableau Color Palettes (discrete)}
 \usage{
 tableau_color_pal(palette = "Tableau 10", type = c("regular",
-  "ordered-seqential", "ordered-diverging"), direction = 1)
+  "ordered-sequential", "ordered-diverging"), direction = 1)
 }
 \arguments{
 \item{palette}{Palette name. See Details for available palettes.}
@@ -19,7 +19,7 @@ colors. If -1, then reverse the order.}
 Color palettes used in \href{http://www.tableausoftware.com/}{Tableau}.
 }
 \details{
-Tableau provides types of color palettes:
+Tableau provides three types of color palettes:
 \code{"regular"} (discrete, qualitative categories),
 \code{"ordered-sequential"}, and \code{"ordered-diverging"}.
 

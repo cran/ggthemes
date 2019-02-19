@@ -4,16 +4,20 @@
 \alias{scale_colour_tableau}
 \alias{scale_fill_tableau}
 \alias{scale_color_tableau}
-\title{Tableau color scales}
+\title{Tableau color scales (discrete)}
 \usage{
-scale_colour_tableau(palette = "Tableau 10", ...)
+scale_colour_tableau(palette = "Tableau 10", type = "regular", ...)
 
-scale_fill_tableau(palette = "Tableau 10", ...)
+scale_fill_tableau(palette = "Tableau 10", type = "regular", ...)
 
-scale_color_tableau(palette = "Tableau 10", ...)
+scale_color_tableau(palette = "Tableau 10", type = "regular", ...)
 }
 \arguments{
-\item{palette}{Palette name. See Details for available palettes.}
+\item{palette}{Palette name. See \funclink{tableau_color_pal}
+for available palettes.}
+
+\item{type}{Palette type. One of \code{"regular"}, \code{"sequential"},
+or \code{"diverging"}. See \funclink{tableau_color_pal}.}
 
 \item{...}{Arguments passed on to \code{discrete_scale}
 \describe{
@@ -68,7 +72,10 @@ scales, "top" or "bottom" for horizontal scales}
 }}
 }
 \description{
-Categorical color scales from Tableau.
+Categorical (qualitative) color scales used in Tableau.
+Use the function \funclink{scale_colour_gradient_tableau} for the sequential
+and \funclink{scale_colour_gradient2_tableau} for the diverging continuous
+color scales from Tableu.
 }
 \examples{
 library("ggplot2")
