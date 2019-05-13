@@ -47,10 +47,11 @@ tableau_color_pal <- function(palette = "Tableau 10",
   max_n <- length(values)
   f <- function(n) {
     check_pal_n(n, max_n)
+    values <- values[seq_len(n)]
     if (direction < 0) {
       values <- rev(values)
     }
-    values[seq_len(n)]
+    values
   }
   attr(f, "max_n") <- length(values)
   f
@@ -63,12 +64,12 @@ tableau_color_pal <- function(palette = "Tableau 10",
 #' and \funclink{scale_colour_gradient2_tableau} for the diverging continuous
 #' color scales from Tableu.
 #'
-#' @inheritParams ggplot2::scale_colour_hue
 #' @param palette Palette name. See \funclink{tableau_color_pal}
 #'   for available palettes.
 #' @param type Palette type. One of \code{"regular"}, \code{"sequential"},
 #'   or \code{"diverging"}. See \funclink{tableau_color_pal}.
 #' @inheritParams tableau_color_pal
+#' @param ... Other arguments passed on to \funclink{discrete_scale}.
 #' @family colour tableau
 #' @rdname scale_color_tableau
 #' @export
@@ -76,16 +77,18 @@ tableau_color_pal <- function(palette = "Tableau 10",
 #' @example inst/examples/ex-scale_color_tableau.R
 scale_colour_tableau <- function(palette = "Tableau 10",
                                  type = "regular",
+                                 direction = 1,
                                  ...) {
-  discrete_scale("colour", "tableau", tableau_color_pal(palette, type), ...)
+  discrete_scale("colour", "tableau", tableau_color_pal(palette, type, direction), ...)
 }
 
 #' @export
 #' @rdname scale_color_tableau
 scale_fill_tableau <- function(palette = "Tableau 10",
                                type = "regular",
+                               direction = 1,
                                ...) {
-  discrete_scale("fill", "tableau", tableau_color_pal(palette, type), ...)
+  discrete_scale("fill", "tableau", tableau_color_pal(palette, type, direction), ...)
 }
 
 #' @export
