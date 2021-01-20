@@ -34,9 +34,10 @@ show_col(few_pal("Light")(7))
 Few, S. (2012) \emph{Show Me the Numbers: Designing Tables and Graphs to Enlighten}.
 2nd edition. Analytics Press.
 
-\href{http://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf}{"Practical Rules for Using Color in Charts"}.
+\href{https://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf}{"Practical Rules for Using Color in Charts"}.
 }
 \seealso{
-Other colour few: \code{\link{scale_colour_few}}
+Other colour few: 
+\code{\link{scale_colour_few}()}
 }
 \concept{colour few}

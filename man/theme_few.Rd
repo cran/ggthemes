@@ -7,7 +7,7 @@
 theme_few(base_size = 12, base_family = "")
 }
 \arguments{
-\item{base_size}{base font size}
+\item{base_size}{base font size, given in pts.}
 
 \item{base_family}{base font family}
 }
@@ -35,6 +35,6 @@ Few, S. (2012) \emph{Show Me the Numbers: Designing Tables and Graphs to Enlight
 2nd edition. Analytics Press.
 
 Stephen Few, "Practical Rules for Using Color in Charts",
-\url{http://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf}.
+\url{https://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf}.
 }
 \concept{themes few}

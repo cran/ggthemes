@@ -29,13 +29,14 @@ p + scale_shape_cleveland(overlap = TRUE)
 \references{
 Lewandowsky, Stephan and Ian Spence (1989)
 "Discriminating Strata in Scatterplots", Journal of
-the American Statistical Association, \url{http://www.jstor.org/stable/2289649}
+the American Statistical Association, \url{https://www.jstor.org/stable/2289649}
 }
 \seealso{
-Other shapes: \code{\link{cleveland_shape_pal}},
-  \code{\link{scale_shape_circlefill}},
-  \code{\link{scale_shape_cleveland}},
-  \code{\link{scale_shape_tremmel}},
-  \code{\link{tremmel_shape_pal}}
+Other shapes: 
+\code{\link{cleveland_shape_pal}()},
+\code{\link{scale_shape_circlefill}()},
+\code{\link{scale_shape_cleveland}()},
+\code{\link{scale_shape_tremmel}()},
+\code{\link{tremmel_shape_pal}()}
 }
 \concept{shapes}
