@@ -1,5 +1,5 @@
 Package: ggthemes
-Version: 4.2.4
+Version: 5.0.0
 Title: Extra Themes, Scales and Geoms for 'ggplot2'
 Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     email = "jeffrey.arnold@gmail.com", 
@@ -16,11 +16,11 @@ Authors@R: c(person("Jeffrey B.", "Arnold", role = c("aut", "cre"),
     comment = "Code from the labeling package"),
     person("Joshua", "London", role = "ctb"))
 Depends: R (>= 3.3.0)
-Imports: ggplot2 (>= 3.0.0), graphics, grid, methods, purrr, scales,
-        stringr, tibble
+Imports: ggplot2 (>= 3.0.0), graphics, grid, lifecycle, methods, purrr,
+        scales, stringr, tibble
 Suggests: dplyr, covr, extrafont, glue, knitr, lattice, lintr, maps,
-        mapproj, pander, rlang, rmarkdown, spelling, testthat, tidyr,
-        vdiffr, withr
+        mapproj, pander, quantreg, rlang, rmarkdown, spelling, testthat
+        (>= 3.2.0), tidyr, vdiffr, withr, V8
 Description: Some extra themes, geoms, and scales for 'ggplot2'.
     Provides 'ggplot2' themes and scales that replicate the look of plots
     by Edward Tufte, Stephen Few, 'Fivethirtyeight', 'The Economist', 'Stata',
@@ -29,12 +29,13 @@ Description: Some extra themes, geoms, and scales for 'ggplot2'.
 License: GPL-2
 URL: https://github.com/jrnold/ggthemes
 BugReports: https://github.com/jrnold/ggthemes
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 LazyData: true
 Language: en-US
 Encoding: UTF-8
+Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-01-20 02:04:38 UTC; jrnold
+Packaged: 2023-11-21 08:47:47 UTC; jarnold
 Author: Jeffrey B. Arnold [aut, cre] (<https://orcid.org/0000-0001-9953-3904>),
   Gergely Daroczi [ctb],
   Bo Werth [ctb],
@@ -47,4 +48,4 @@ Author: Jeffrey B. Arnold [aut, cre] (<https://orcid.org/0000-0001-9953-3904>),
   Joshua London [ctb]
 Maintainer: Jeffrey B. Arnold <jeffrey.arnold@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-01-20 16:50:03 UTC
+Date/Publication: 2023-11-21 10:50:02 UTC

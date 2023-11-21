@@ -7,7 +7,7 @@
 few_pal(palette = "Medium")
 }
 \arguments{
-\item{palette}{One of \Sexpr[results=rd]{names(ggthemes:::rd_optlist(ggthemes::ggthemes_data$few$colors))}}
+\item{palette}{One of \Sexpr[results=rd,stage=build]{names(ggthemes:::rd_optlist(ggthemes::ggthemes_data$few$colors))}}
 }
 \description{
 Qualitative color palettes from Stephen Few (2012)

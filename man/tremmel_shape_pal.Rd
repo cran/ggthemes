@@ -4,21 +4,23 @@
 \alias{tremmel_shape_pal}
 \title{Shape palette from Tremmel (1995) (discrete)}
 \usage{
-tremmel_shape_pal(overlap = FALSE, alt = FALSE, n3alt = NULL)
+tremmel_shape_pal(overlap = FALSE, alt = FALSE, n3alt = deprecated())
 }
 \arguments{
 \item{overlap}{use an empty circle instead of a solid circle when
 \code{n == 2}.}
 
-\item{alt, n3alt}{If \code{TRUE}, then when \code{n == 3},
+\item{alt}{If \code{TRUE}, then when \code{n == 3},
 use a solid circle, plus sign and
 empty triangle. Otherwise use a solid circle, empty circle, and empty
 triangle.}
+
+\item{n3alt}{`r lifecycle::badge("deprecated")` `n3alt` is no
+longer supported; use `alt` instead.}
 }
 \description{
 Based on experiments Tremmel (1995) suggests the following shape palettes:
-}
-\details{
+
 If two symbols, then use a solid circle and plus sign.
 
 If three symbols, then use a solid circle, empty circle, and an
@@ -31,6 +33,8 @@ terminators), triangle (line orientation).
 This palette supports up to three values.
 If more than three groups of data, then separate the groups into
 different plots.
+
+not work for all graphics devices.
 }
 \references{
 Tremmel, Lothar, (1995) "The Visual Separability of Plotting Symbols in Scatterplots"

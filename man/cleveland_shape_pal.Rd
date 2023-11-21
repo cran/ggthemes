@@ -25,15 +25,16 @@ and there does not exist a unicode symbol for a circle with a
 vertical line. If someone can improve this palette, please let me
 know.
 
-Following Tremmel (1995), I replace the circle with a vertical
+Following Tremmel (1995), this function replaces the circle with a vertical
 line with an encircled plus sign.
 
 The palette \code{cleveland_shape_pal()} supports up to five values.
+
+This package uses unicode symbols for the shapes. This means that it will
+not work for all graphics devices.
 }
 \examples{
-###   (discrete).
-
-
+\dontrun{
 library("ggplot2")
 p <- ggplot(mtcars) +
      geom_point(aes(x = wt, y = mpg, shape = factor(gear))) +
@@ -43,6 +44,7 @@ p <- ggplot(mtcars) +
 p + scale_shape_cleveland()
 # non-overlapping symbol palette
 p + scale_shape_cleveland(overlap = FALSE)
+}
 }
 \references{
 Cleveland WS. \emph{The Elements of Graphing Data}. Revised Edition. Hobart Press, Summit, NJ, 1994, pp. 154-164, 234-239.

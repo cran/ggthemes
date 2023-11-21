@@ -125,7 +125,6 @@ scale_fill_economist <- function(...) {
 #' \itemize{
 #' \item \href{https://www.economist.com/}{The Economist}
 #' \item \href{https://spiekermann.com/en/itc-officina-display/}{Spiekerblog, "ITC Officina Display", January 1, 2007.}
-#' \item \url{https://www.economist.com/help/about-us}
 #' }
 #'
 #' @example inst/examples/ex-theme_economist.R
@@ -146,7 +145,7 @@ theme_economist <- function(base_size = 10, base_family = "sans",
                               linetype = 1),
           text = element_text(colour = "black"),
           ## Axis
-          axis.line = element_line(size = rel(0.8)),
+          axis.line = element_line(linewidth = rel(0.8)),
           axis.line.y = element_blank(),
           axis.text = element_text(size = rel(1)),
           axis.text.x = element_text(vjust = 0,
@@ -183,7 +182,7 @@ theme_economist <- function(base_size = 10, base_family = "sans",
           ## Economist only uses vertical lines
           panel.background = element_rect(linetype = 0),
           panel.border = element_blank(),
-          panel.grid.major = element_line(colour = "white", size = rel(1.75)),
+          panel.grid.major = element_line(colour = "white", linewidth = rel(1.75)),
           panel.grid.minor = element_blank(),
           panel.spacing = unit(0.25, "lines"),
           strip.background = element_rect(fill = bgcolors["ebg"],

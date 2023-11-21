@@ -44,10 +44,10 @@ scale_fill_continuous_tableau(
 )
 }
 \arguments{
-\item{palette}{Palette name.
-\itemize{
-\item{\code{"ordered-sequential"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
-\item{\code{"ordered-diverging"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
+\item{palette}{Palette name. One of the following:
+\describe{
+\item{Ordered sequential palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
+\item{Ordered diverging palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
 }}
 
 \item{...}{Arguments passed to \code{tableau_gradient_pal}.}

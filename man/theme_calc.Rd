@@ -15,16 +15,19 @@ theme_calc(base_size = 10, base_family = "sans")
 Theme similar to the default settings of LibreOffice Calc charts.
 }
 \examples{
+\dontrun{
 library("ggplot2")
 
 p <- ggplot(mtcars) +
      geom_point(aes(x = wt, y = mpg, colour = factor(gear))) +
      facet_wrap(~am) + theme_calc()
 p + scale_color_calc()
+
 q <- ggplot(mtcars) +
      geom_point(aes(x = wt, y = mpg, shape = factor(gear))) +
      facet_wrap(~am) +
      theme_calc()
 q + scale_shape_calc()
+}
 }
 \concept{themes calc}

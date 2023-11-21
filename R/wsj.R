@@ -55,30 +55,24 @@ theme_wsj <- function(base_size = 12,
 #'
 #' The Wall Street Journal uses many different color palettes in its
 #' plots. This collects a few of them, but is by no means exhaustive.
-#' Collections of these plots can be found on the WSJ Graphics
-#' \href{https://twitter.com/WSJGraphics}{Twitter} feed and
-#' \href{https://pinterest.com/wsjgraphics/wsj-graphics/}{Pinterest}.
+#' Collections of these plots were found in the WSJ Graphics
+#' \href{https://pinterest.com/wsjgraphics/wsj-graphics/}{Pinterest} collection.
 #'
 #' @section Palettes:
 #'
 #' The following palettes are defined,
 #'
 #' \describe{
-#' \item{rgby}{Red/Green/Blue/Yellow theme.
-#'   Examples: \url{https://twitpic.com/b2e3v2}. Up to four values.}
-#'   \item{red_green}{Green/red two-color scale for good/bad. Examples:
-#' \url{https://twitpic.com/b1avj6}, \url{https://twitpic.com/a4kxcl}.}
+#' \item{rgby}{Red/Green/Blue/Yellow theme. Up to four values.}
+#' \item{red_green}{Green/red two-color scale for good/bad.}
 #' \item{green_black}{Black-green 4-color scale for 'Very negative',
-#'   'Somewhat negative', 'somewhat positive', 'very positive'.
-#'   Examples: \url{https://twitpic.com/awbua0}.}
-#' \item{dem_rep}{Democrat/Republican/Undecided blue/red/gray scale.
-#'   Examples: \url{https://twitpic.com/awbua0}.}
-#' \item{colors6}{Red, blue, gold, green, orange, and black palette.
-#'   Examples: \url{https://twitpic.com/9gfg5q}.}
+#'   'Somewhat negative', 'somewhat positive', 'very positive'.}
+#' \item{dem_rep}{Democrat/Republican/Undecided blue/red/gray scale.}
+#' \item{colors6}{Red, blue, gold, green, orange, and black palette.}
 #' }
 #'
 #' @param palette \code{character} The color palette to use: .
-#' \Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$wsj$palettes))}
+#' \Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$wsj$palettes))}
 #'
 #' @family colour wsj
 #' @export

@@ -4,7 +4,7 @@
 #'
 #' @references
 #'
-#' \url{https://www.highcharts.com/demo/line-basic}
+#' \url{https://www.highcharts.com/demo/highcharts/line-chart}
 #'
 #' @inheritParams ggplot2::theme_bw
 #' @param style The Highcharts theme to use \code{'default'},

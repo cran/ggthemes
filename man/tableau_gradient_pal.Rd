@@ -13,10 +13,10 @@ tableau_seq_gradient_pal(palette = "Blue", ...)
 tableau_div_gradient_pal(palette = "Orange-Blue Diverging", ...)
 }
 \arguments{
-\item{palette}{Palette name.
-\itemize{
-\item{\code{"ordered-sequential"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
-\item{\code{"ordered-diverging"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
+\item{palette}{Palette name. One of the following:
+\describe{
+\item{Ordered sequential palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
+\item{Ordered diverging palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
 }}
 
 \item{type}{Palette type, either \code{"ordered-sequential"} or

@@ -6,10 +6,10 @@
 #' \code{"regular"} (discrete, qualitative categories),
 #' \code{"ordered-sequential"}, and \code{"ordered-diverging"}.
 #'
-#' \itemize{
-#' \item{\code{"regular"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["regular"]]))}}
-#' \item{\code{"ordered-diverging"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
-#' \item{\code{"ordered-sequential"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
+#' \describe{
+#' \item{Regular palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["regular"]]))}}
+#' \item{Ordered diverging palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
+#' \item{Ordered sequential palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
 #' }
 #'
 #' @export
@@ -109,6 +109,8 @@ scale_color_tableau <- scale_colour_tableau
 #' Shape palettes in Tableau are used to expose images for use a markers in
 #' charts, and thus are sometimes groupings of closely related symbols.
 #'
+#' This palette uses unicode symbols. It may not work on all graphics devices.
+#'
 #' @export
 #' @param palette Palette name.
 #' @family shape tableau
@@ -125,6 +127,8 @@ tableau_shape_pal <- function(palette = c("default", "filled", "proportions")) {
 #'
 #' See \code{\link{tableau_shape_pal}()} for details.
 #'
+#' This palette uses unicode symbols. It may not work on all graphics devices.
+#'
 #' @export
 #' @inheritParams tableau_shape_pal
 #' @inheritParams ggplot2::scale_x_discrete
@@ -140,10 +144,10 @@ scale_shape_tableau <- function(palette = "default", ...) {
 #' palettes in Tableau. See \funclink{tableau_color_pal} for discrete color
 #' palettes.
 #'
-#' @param palette Palette name.
-#'  \itemize{
-#'  \item{\code{"ordered-sequential"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
-#'  \item{\code{"ordered-diverging"}}{\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
+#' @param palette Palette name. One of the following:
+#'  \describe{
+#'  \item{Ordered sequential palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-sequential"]]))}}
+#'  \item{Ordered diverging palettes}{\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$tableau[["color-palettes"]][["ordered-diverging"]]))}}
 #'  }
 #' @param type Palette type, either \code{"ordered-sequential"} or
 #'   \code{"ordered-diverging"}.

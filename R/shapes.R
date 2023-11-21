@@ -18,10 +18,13 @@
 #' vertical line. If someone can improve this palette, please let me
 #' know.
 #'
-#' Following Tremmel (1995), I replace the circle with a vertical
+#' Following Tremmel (1995), this function replaces the circle with a vertical
 #' line with an encircled plus sign.
 #'
 #' The palette \code{cleveland_shape_pal()} supports up to five values.
+#'
+#' This package uses unicode symbols for the shapes. This means that it will
+#' not work for all graphics devices.
 #'
 #' @example inst/examples/ex-cleveland_shape_pal.R
 #' @references
@@ -62,6 +65,12 @@ scale_shape_cleveland <- function(overlap = TRUE, ...) {
 
 #' Filled Circle Shape palette (discrete)
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function was deprecated because unicode glyphs used for the circles
+#' vary in size, making them unusable for plotting.
+#'
 #' Shape palette with circles varying by amount of fill. This uses
 #' the set of 3 circle fill values in Lewandowsky and Spence (1989):
 #' solid, hollow, half-filled, with two additional fill amounts:
@@ -73,10 +82,11 @@ scale_shape_cleveland <- function(overlap = TRUE, ...) {
 #' Lewandowsky, Stephan and Ian Spence (1989)
 #' "Discriminating Strata in Scatterplots", Journal of
 #' the American Statistical Association, \url{https://www.jstor.org/stable/2289649}
-#' @example inst/examples/ex-circlefill_shape_pal.R
 #' @family shapes
+#' @importFrom lifecycle deprecate_soft
 #' @export
 circlefill_shape_pal <- function() {
+  deprecate_soft("5.0.0", "circlefill_shape_pal()")
   values <- ggthemes::ggthemes_data[["shapes"]][["circlefill"]][["pch"]]
   max_n <- length(values)
   f <- manual_pal(values)
@@ -86,17 +96,24 @@ circlefill_shape_pal <- function() {
 
 #' Filled Circle Shape palette (discrete)
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
 #' @export
 #'
 #' @inheritParams ggplot2::scale_x_discrete
 #' @family shapes
+#' @importFrom lifecycle deprecate_soft
 #' @seealso
 #' \code{\link{circlefill_shape_pal}()} for a description of the palette.
 scale_shape_circlefill <- function(...) {
+  deprecate_soft("5.0.0", "scale_shape_circlefill()")
   discrete_scale("shape", "circlefill", circlefill_shape_pal(), ...)
 }
 
 #' Shape palette from Tremmel (1995) (discrete)
+#'
+#' @description
 #'
 #' Based on experiments Tremmel (1995) suggests the following shape palettes:
 #'
@@ -113,22 +130,28 @@ scale_shape_circlefill <- function(...) {
 #' If more than three groups of data, then separate the groups into
 #' different plots.
 #'
+#" This package uses unicode symbols for the shapes. This means that it will
+#' not work for all graphics devices.
+#'
 #' @param overlap use an empty circle instead of a solid circle when
 #' \code{n == 2}.
-#' @param alt,n3alt If \code{TRUE}, then when \code{n == 3},
+#' @param alt If \code{TRUE}, then when \code{n == 3},
 #'   use a solid circle, plus sign and
 #'   empty triangle. Otherwise use a solid circle, empty circle, and empty
 #'   triangle.
+#' @param n3alt `r lifecycle::badge("deprecated")` `n3alt` is no
+#'   longer supported; use `alt` instead.
 #' @family shapes
 #' @references
 #' Tremmel, Lothar, (1995) "The Visual Separability of Plotting Symbols in Scatterplots"
 #' Journal of Computational and Graphical Statistics,
 #' \url{https://www.jstor.org/stable/1390760}
+#' @importFrom lifecycle deprecated
 #' @export
-tremmel_shape_pal <- function(overlap = FALSE, alt = FALSE, n3alt = NULL) {
-  if (!is.null(n3alt)) {
-    warning("`n3alt` is deprecated. Use `alt` instead.")
-    alt <- n3alt[[1]]
+tremmel_shape_pal <- function(overlap = FALSE, alt = FALSE, n3alt = deprecated())  {
+  if (lifecycle::is_present(n3alt)) {
+    lifecycle::deprecate_warn("4.0.0", "tremmel_shape_pal(n3alt)", "tremmel_shape_pal(alt)")
+    alt <- n3alt
   }
   max_n <- 3L
   palettes <- ggthemes::ggthemes_data$shapes$tremmel

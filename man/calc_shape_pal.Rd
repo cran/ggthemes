@@ -9,6 +9,10 @@ calc_shape_pal()
 \description{
 Shape palette based on the shapes used in LibreOffice Calc.
 }
+\details{
+This palette uses unicode symbols for the shapes. It will
+not work for all graphics devices.
+}
 \examples{
 library("ggplot2")
 
