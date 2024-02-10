@@ -10,10 +10,6 @@ stata_shape_pal()
 Shape palette based on the symbol palette in Stata used in scheme s2mono.
 This palette supports up to 10 values.
 }
-\details{
-This palette uses unicode symbols for the shapes. This means that it will
-not work for all graphics devices.
-}
 \seealso{
 See \code{\link{scale_shape_stata}()} for examples.
 }

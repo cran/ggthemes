@@ -10,7 +10,7 @@ excel_new_pal(theme = "Office Theme")
 \item{theme}{The name of the Office theme or color theme
 (not to be confused with ggplot2 themes) from which to derive the color
 palette. Available themes include:
-\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$excel$themes))}}
+\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$excel$themes))}}
 }
 \description{
 Color palettes used by current versions of Microsoft Office and Excel.

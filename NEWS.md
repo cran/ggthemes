@@ -1,11 +1,15 @@
+# ggthemes 5.1.0
+
+- Updated `scale_color_gdocs` and `gdocs_pal` to use current colors. Palette extended from 10 to 24 colors.
+- Updated tests to be compatible with ggplot 3.5.0 (#153)
+- Removed `legend.title.align` and `legend.text.align` from themes. (#153)
+
 # ggthemes 5.0.0
 
 - Deprecate `circlefill_shape_pal` and `scale_shape_circlefill`
-- Bugfix: Fix failing CRAN tests. Shape scales and palettes could fail if glyphs unavailable in graphics devices.
+- Bugfix: Fix failing CRAN tests. Shape scales and palettes could fail if glyphs  unavailable in graphics devices.
 - Bugfix: Add alias to `ggthemes-package`
 - Add `quantreg` to suggested packages
-
-# ggthemes 4.2.4
 
 # ggthemes 4.2.3
 

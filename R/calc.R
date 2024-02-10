@@ -70,9 +70,6 @@ scale_color_calc <- scale_colour_calc
 #'
 #' Shape palette based on the shapes used in LibreOffice Calc.
 #'
-#' This palette uses unicode symbols for the shapes. It will
-#' not work for all graphics devices.
-#'
 #' @export
 #' @family shapes calc
 #' @example inst/examples/ex-calc_shape_pal.R
@@ -86,9 +83,6 @@ calc_shape_pal <- function() {
 #' Calc shape scale
 #'
 #' See \code{\link{calc_shape_pal}()} for details.
-#'
-#' This scale uses unicode symbols for the shapes. It will
-#' not work for all graphics devices.
 #'
 #' @inheritParams ggplot2::scale_x_discrete
 #' @family shapes calc

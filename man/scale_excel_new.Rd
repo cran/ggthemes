@@ -16,7 +16,7 @@ scale_fill_excel_new(theme = "Office Theme", ...)
 \item{theme}{The name of the Office theme or color theme
 (not to be confused with ggplot2 themes) from which to derive the color
 palette. Available themes include:
-\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$excel$themes))}}
+\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$excel$themes))}}
 
 \item{...}{
   Arguments passed on to \code{\link[ggplot2:discrete_scale]{discrete_scale}}

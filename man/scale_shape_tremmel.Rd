@@ -73,7 +73,6 @@ notation.
 Shape scales from Tremmel (1995)
 }
 \examples{
-\dontrun{
 library("ggplot2")
 
 p <- ggplot(mtcars, aes(x = mpg, y = hp, shape = factor(cyl))) +
@@ -82,7 +81,6 @@ p <- ggplot(mtcars, aes(x = mpg, y = hp, shape = factor(cyl))) +
 p + scale_shape_tremmel()
 p + scale_shape_tremmel(alt = TRUE)
 p + scale_shape_tremmel(overlap = TRUE)
-}
 }
 \seealso{
 \code{\link{tremmel_shape_pal}()} for a description of the palette.

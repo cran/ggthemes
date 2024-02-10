@@ -86,8 +86,7 @@ theme_stata_base <- function(base_size = 11, base_family = "sans") {
         legend.text = element_text(size = rel(relsz["medsmall"])),
         legend.text.align = NULL,
         ## See textboxstyle leg_title
-        legend.title = element_text(size = rel(relsz["large"]), hjust = 0),
-        legend.title.align = 0.5,
+        legend.title = element_text(size = rel(relsz["large"]), hjust = 0.5),
         legend.position = "bottom",
         legend.direction = NULL,
         legend.justification = "center",
@@ -240,9 +239,6 @@ theme_stata <- function(base_size = 11, base_family = "sans",
 #' Shape palette based on the symbol palette in Stata used in scheme s2mono.
 #' This palette supports up to 10 values.
 #'
-#' This palette uses unicode symbols for the shapes. This means that it will
-#' not work for all graphics devices.
-#'
 #' @export
 #' @family shapes stata
 #' @seealso See \code{\link{scale_shape_stata}()} for examples.
@@ -267,9 +263,6 @@ stata_shape_pal <- function() {
 #' Stata shape scale
 #'
 #' See \code{\link{stata_shape_pal}()} for details.
-#'
-#' This scale uses unicode symbols for the shapes. This means that it will
-#' not work for all graphics devices.
 #'
 #' @inheritParams ggplot2::scale_x_discrete
 #' @family shape stata

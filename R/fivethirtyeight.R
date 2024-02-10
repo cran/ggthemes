@@ -1,6 +1,6 @@
 #' Theme inspired by FiveThirtyEight plots
 #'
-#' Theme inspired by the plots that were produced by the site FiveThirtyEight (fivethirtyeight.com).
+#' Theme inspired by the plots from FiveThirtyEight.com.
 #'
 #' @inheritParams ggplot2::theme_grey
 #' @family themes fivethirtyeight

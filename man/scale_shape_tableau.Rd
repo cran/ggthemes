@@ -66,9 +66,6 @@ notation.
 \description{
 See \code{\link{tableau_shape_pal}()} for details.
 }
-\details{
-This palette uses unicode symbols. It may not work on all graphics devices.
-}
 \examples{
 \dontrun{
 library("ggplot2")

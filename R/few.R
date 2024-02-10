@@ -20,7 +20,7 @@
 #' \href{https://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf}{"Practical Rules for Using Color in Charts"}.
 #'
 #' @export
-#' @param palette One of \Sexpr[results=rd,stage=build]{names(ggthemes:::rd_optlist(ggthemes::ggthemes_data$few$colors))}
+#' @param palette One of \Sexpr[results=rd]{names(ggthemes:::rd_optlist(ggthemes::ggthemes_data$few$colors))}
 #' @family colour few
 #' @example inst/examples/ex-few_pal.R
 few_pal <- function(palette = "Medium") {

@@ -64,10 +64,6 @@ notation.
 \description{
 See \code{\link{stata_shape_pal}()} for details.
 }
-\details{
-This scale uses unicode symbols for the shapes. This means that it will
-not work for all graphics devices.
-}
 \examples{
 \dontrun{
 library("ggplot2")

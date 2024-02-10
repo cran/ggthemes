@@ -1,3 +1,5 @@
+###   (discrete).
+
 \dontrun{
 library("ggplot2")
 p <- ggplot(mtcars) +

@@ -23,8 +23,6 @@ font being used, and not all characters may be available.
 
 Shape palettes in Tableau are used to expose images for use a markers in
 charts, and thus are sometimes groupings of closely related symbols.
-
-This palette uses unicode symbols. It may not work on all graphics devices.
 }
 \examples{
 \dontrun{

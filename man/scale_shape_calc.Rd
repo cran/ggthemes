@@ -64,10 +64,6 @@ notation.
 \description{
 See \code{\link{calc_shape_pal}()} for details.
 }
-\details{
-This scale uses unicode symbols for the shapes. It will
-not work for all graphics devices.
-}
 \seealso{
 \code{\link{theme_calc}()} for examples.
 

@@ -8,13 +8,14 @@ wsj_pal(palette = "colors6")
 }
 \arguments{
 \item{palette}{\code{character} The color palette to use: .
-\Sexpr[results=rd,stage=build]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$wsj$palettes))}}
+\Sexpr[results=rd]{ggthemes:::rd_optlist(names(ggthemes::ggthemes_data$wsj$palettes))}}
 }
 \description{
 The Wall Street Journal uses many different color palettes in its
 plots. This collects a few of them, but is by no means exhaustive.
-Collections of these plots were found in the WSJ Graphics
-\href{https://pinterest.com/wsjgraphics/wsj-graphics/}{Pinterest} collection.
+Collections of these plots can be found on the WSJ Graphics
+\href{https://twitter.com/WSJGraphics}{Twitter} feed and
+\href{https://pinterest.com/wsjgraphics/wsj-graphics/}{Pinterest}.
 }
 \section{Palettes}{
 
@@ -22,8 +23,8 @@ Collections of these plots were found in the WSJ Graphics
 The following palettes are defined,
 
 \describe{
-\item{rgby}{Red/Green/Blue/Yellow theme. Up to four values.}
-\item{red_green}{Green/red two-color scale for good/bad.}
+\item{rgby}{Red/Green/Blue/Yellow theme.}
+  \item{red_green}{Green/red two-color scale for good/bad.}
 \item{green_black}{Black-green 4-color scale for 'Very negative',
   'Somewhat negative', 'somewhat positive', 'very positive'.}
 \item{dem_rep}{Democrat/Republican/Undecided blue/red/gray scale.}

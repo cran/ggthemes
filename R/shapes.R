@@ -18,13 +18,10 @@
 #' vertical line. If someone can improve this palette, please let me
 #' know.
 #'
-#' Following Tremmel (1995), this function replaces the circle with a vertical
+#' Following Tremmel (1995), I replace the circle with a vertical
 #' line with an encircled plus sign.
 #'
 #' The palette \code{cleveland_shape_pal()} supports up to five values.
-#'
-#' This package uses unicode symbols for the shapes. This means that it will
-#' not work for all graphics devices.
 #'
 #' @example inst/examples/ex-cleveland_shape_pal.R
 #' @references
@@ -113,8 +110,6 @@ scale_shape_circlefill <- function(...) {
 
 #' Shape palette from Tremmel (1995) (discrete)
 #'
-#' @description
-#'
 #' Based on experiments Tremmel (1995) suggests the following shape palettes:
 #'
 #' If two symbols, then use a solid circle and plus sign.
@@ -130,29 +125,19 @@ scale_shape_circlefill <- function(...) {
 #' If more than three groups of data, then separate the groups into
 #' different plots.
 #'
-#" This package uses unicode symbols for the shapes. This means that it will
-#' not work for all graphics devices.
-#'
 #' @param overlap use an empty circle instead of a solid circle when
 #' \code{n == 2}.
 #' @param alt If \code{TRUE}, then when \code{n == 3},
 #'   use a solid circle, plus sign and
 #'   empty triangle. Otherwise use a solid circle, empty circle, and empty
 #'   triangle.
-#' @param n3alt `r lifecycle::badge("deprecated")` `n3alt` is no
-#'   longer supported; use `alt` instead.
 #' @family shapes
 #' @references
 #' Tremmel, Lothar, (1995) "The Visual Separability of Plotting Symbols in Scatterplots"
 #' Journal of Computational and Graphical Statistics,
 #' \url{https://www.jstor.org/stable/1390760}
-#' @importFrom lifecycle deprecated
 #' @export
-tremmel_shape_pal <- function(overlap = FALSE, alt = FALSE, n3alt = deprecated())  {
-  if (lifecycle::is_present(n3alt)) {
-    lifecycle::deprecate_warn("4.0.0", "tremmel_shape_pal(n3alt)", "tremmel_shape_pal(alt)")
-    alt <- n3alt
-  }
+tremmel_shape_pal <- function(overlap = FALSE, alt = FALSE) {
   max_n <- 3L
   palettes <- ggthemes::ggthemes_data$shapes$tremmel
   f <- function(n) {
