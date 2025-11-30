@@ -1,3 +1,4 @@
+# nolint start
 #' Tableau Color Palettes (discrete)
 #'
 #' Color palettes used in \href{https://www.tableau.com/}{Tableau}.
@@ -32,15 +33,24 @@
 #'
 #' @family colour tableau
 #' @example inst/examples/ex-tableau_color_pal.R
-tableau_color_pal <- function(palette = "Tableau 10",
-                              type = c("regular", "ordered-sequential",
-                                       "ordered-diverging"),
-                              direction = 1) {
+# nolint end
+tableau_color_pal <- function(
+  palette = "Tableau 10",
+  type = c(
+    "regular",
+    "ordered-sequential",
+    "ordered-diverging"
+  ),
+  direction = 1
+) {
   type <- match.arg(type)
   palettes <- ggthemes::ggthemes_data[["tableau"]][["color-palettes"]][[type]]
   if (!palette %in% names(palettes)) {
-    stop("`palette` must be one of ", paste(names(palettes), collapse = ", "),
-         ".")
+    stop(
+      "`palette` must be one of ",
+      paste(names(palettes), collapse = ", "),
+      "."
+    )
   }
   values <- palettes[[palette]][["value"]]
   max_n <- length(values)
@@ -68,26 +78,20 @@ tableau_color_pal <- function(palette = "Tableau 10",
 #' @param type Palette type. One of \code{"regular"}, \code{"sequential"},
 #'   or \code{"diverging"}. See \funclink{tableau_color_pal}.
 #' @inheritParams tableau_color_pal
-#' @param ... Other arguments passed on to \funclink{discrete_scale}.
+#' @param ... Other arguments passed on to \code{\link[ggplot2]{discrete_scale}()}.
 #' @family colour tableau
 #' @rdname scale_color_tableau
 #' @export
 #' @seealso \code{\link{tableau_color_pal}()} for references.
 #' @example inst/examples/ex-scale_color_tableau.R
-scale_colour_tableau <- function(palette = "Tableau 10",
-                                 type = "regular",
-                                 direction = 1,
-                                 ...) {
-  discrete_scale("colour", "tableau", tableau_color_pal(palette, type, direction), ...)
+scale_colour_tableau <- function(palette = "Tableau 10", type = "regular", direction = 1, ...) {
+  discrete_scale("colour", palette = tableau_color_pal(palette, type, direction), ...)
 }
 
 #' @export
 #' @rdname scale_color_tableau
-scale_fill_tableau <- function(palette = "Tableau 10",
-                               type = "regular",
-                               direction = 1,
-                               ...) {
-  discrete_scale("fill", "tableau", tableau_color_pal(palette, type, direction), ...)
+scale_fill_tableau <- function(palette = "Tableau 10", type = "regular", direction = 1, ...) {
+  discrete_scale("fill", palette = tableau_color_pal(palette, type, direction), ...)
 }
 
 #' @export
@@ -131,9 +135,10 @@ tableau_shape_pal <- function(palette = c("default", "filled", "proportions")) {
 #' @family shape tableau
 #' @example inst/examples/ex-scale_shape_tableau.R
 scale_shape_tableau <- function(palette = "default", ...) {
-  discrete_scale("shape", "tableau", tableau_shape_pal(palette), ...)
+  discrete_scale("shape", palette = tableau_shape_pal(palette), ...)
 }
 
+# nolint start
 #' Tableau colour gradient palettes (continuous)
 #'
 #' Gradient color palettes using the diverging and sequential continous color
@@ -152,11 +157,15 @@ scale_shape_tableau <- function(palette = "default", ...) {
 #'
 #' @export
 #' @example inst/examples/ex-tableau_seq_gradient_pal.R
-tableau_gradient_pal <- function(palette = "Blue",
-                                 type = "ordered-sequential") {
+# nolint end
+tableau_gradient_pal <- function(palette = "Blue", type = "ordered-sequential") {
   type <- match.arg(type, c("ordered-sequential", "ordered-diverging"))
-  pal <- ggthemes::ggthemes_data[[c("tableau", "color-palettes",
-                                    type, palette)]]
+  pal <- ggthemes::ggthemes_data[[c(
+    "tableau",
+    "color-palettes",
+    type,
+    palette
+  )]]
   scales::gradient_n_pal(colours = pal[["value"]])
 }
 
@@ -188,28 +197,24 @@ tableau_div_gradient_pal <- function(palette = "Orange-Blue Diverging", ...) {
 #' @rdname scale_colour_gradient_tableau
 #' @example inst/examples/ex-scale_colour_gradient_tableau.R
 #' @importFrom ggplot2 continuous_scale
-scale_colour_gradient_tableau <- function(palette = "Blue",
-                                          ...,
-                                          na.value = "grey50",
-                                          guide = "colourbar") {
-  continuous_scale("colour", "tableau",
-                   tableau_seq_gradient_pal(palette),
-                   na.value = na.value,
-                   guide = guide,
-                   ...)
+scale_colour_gradient_tableau <- function(
+  palette = "Blue",
+  ...,
+  na.value = "grey50", # nolint: object_name_linter
+  guide = "colourbar"
+) {
+  continuous_scale("colour", palette = tableau_seq_gradient_pal(palette), na.value = na.value, guide = guide, ...)
 }
 
 #' @export
 #' @rdname scale_colour_gradient_tableau
-scale_fill_gradient_tableau <- function(palette = "Blue",
-                                        ...,
-                                        na.value = "grey50",
-                                        guide = "colourbar") {
-  continuous_scale("fill", "tableau",
-                   tableau_seq_gradient_pal(palette),
-                   na.value = na.value,
-                   guide = guide,
-                   ...)
+scale_fill_gradient_tableau <- function(
+  palette = "Blue",
+  ...,
+  na.value = "grey50", # nolint: object_name_linter
+  guide = "colourbar"
+) {
+  continuous_scale("fill", palette = tableau_seq_gradient_pal(palette), na.value = na.value, guide = guide, ...)
 }
 
 #' @export
@@ -238,28 +243,24 @@ scale_fill_continuous_tableau <- scale_fill_gradient_tableau
 #' @export
 #' @rdname scale_colour_gradient2_tableau
 #' @example inst/examples/ex-scale_colour_gradient2_tableau.R
-scale_colour_gradient2_tableau <- function(palette = "Orange-Blue Diverging",
-                                           ...,
-                                           na.value = "grey50",
-                                           guide = "colourbar") {
-  continuous_scale("colour", "tableau2",
-                   tableau_div_gradient_pal(palette),
-                   na.value = na.value,
-                   guide = guide,
-                   ...)
+scale_colour_gradient2_tableau <- function(
+  palette = "Orange-Blue Diverging",
+  ...,
+  na.value = "grey50", # nolint: object_name_linter
+  guide = "colourbar"
+) {
+  continuous_scale("colour", palette = tableau_div_gradient_pal(palette), na.value = na.value, guide = guide, ...)
 }
 
 #' @export
 #' @rdname scale_colour_gradient2_tableau
-scale_fill_gradient2_tableau <- function(palette = "Orange-Blue Diverging",
-                                         ...,
-                                         na.value = "grey50",
-                                         guide = "colourbar") {
-  continuous_scale("fill", "tableau2",
-                   tableau_div_gradient_pal(palette),
-                   na.value = na.value,
-                   guide = guide,
-                   ...)
+scale_fill_gradient2_tableau <- function(
+  palette = "Orange-Blue Diverging",
+  ...,
+  na.value = "grey50", # nolint: object_name_linter
+  guide = "colourbar"
+) {
+  continuous_scale("fill", palette = tableau_div_gradient_pal(palette), na.value = na.value, guide = guide, ...)
 }
 
 #' @export

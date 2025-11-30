@@ -1,6 +1,6 @@
 #' Magic Number: Points to Millimeters
 #' @noRd
-PT_TO_MM <- 0.352778
+PT_TO_MM <- 0.352778 # nolint: object_name_linter
 
 charopts <- function(x) {
   paste(sprintf("\\code{\"%s\"}", x), collapse = ", ")
@@ -23,8 +23,14 @@ rd_optlist <- function(x) {
 
 check_pal_n <- function(n, max_n) {
   if (n > max_n) {
-    warning("This palette can handle a maximum of ", max_n, " values.",
-            "You have supplied ", n, ".")
+    warning(
+      "This palette can handle a maximum of ",
+      max_n,
+      " values.",
+      "You have supplied ",
+      n,
+      "."
+    )
   } else if (n < 0) {
     stop("`n` must be a non-negative integer.")
   }

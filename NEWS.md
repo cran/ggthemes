@@ -1,3 +1,10 @@
+# ggthemes 5.2.0
+
+- Renamed `scale_colour_colorblind()` to `scale_colour_colourblind()` (#180).
+- Updated `theme_solarized` to fix `key.background` color.
+- Bugfix: Fix documentation cross-links (#186)
+- Bugfix: Removed usage of deprecated ggplot functions
+
 # ggthemes 5.1.0
 
 - Updated `scale_color_gdocs` and `gdocs_pal` to use current colors. Palette extended from 10 to 24 colors.

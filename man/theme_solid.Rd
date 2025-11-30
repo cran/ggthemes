@@ -9,7 +9,7 @@ theme_solid(base_size = 12, base_family = "", fill = NA)
 \arguments{
 \item{base_size}{Base font size.}
 
-\item{base_family}{Ignored, kept for consistency with \code{\link{theme}()}.}
+\item{base_family}{Ignored, kept for consistency with \code{\link[ggplot2]{theme}()}.}
 
 \item{fill}{Background color of the plot.}
 }
@@ -21,8 +21,8 @@ This theme is when only the geometric objects are desired.
 library("ggplot2")
 
 ggplot(mtcars, aes(wt, mpg)) +
- geom_point() +
- theme_solid(fill = "white")
+  geom_point() +
+  theme_solid(fill = "white")
 
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point(color = "white") +

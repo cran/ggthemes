@@ -17,7 +17,7 @@ theme_tufte(base_size = 11, base_family = "serif", ticks = TRUE)
 Theme based on Chapter 6 'Data-Ink Maximization and Graphical
 Design' of Edward Tufte *The Visual Display of Quantitative
 Information*. No border, no axis lines, no grids. This theme works
-best in combination with \code{\link{geom_rug}()} or
+best in combination with \code{\link[ggplot2]{geom_rug}()} or
 \code{\link{geom_rangeframe}()}.
 }
 \note{
@@ -37,12 +37,9 @@ p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   scale_y_continuous(breaks = extended_range_breaks()(mtcars$mpg)) +
   ggtitle("Cars")
 
-p + geom_rangeframe() +
-  coord_cartesian(clip="off") +
-  theme_tufte()
+p + geom_rangeframe() + coord_cartesian(clip = "off") + theme_tufte()
 
-p + geom_rug() +
- theme_tufte(ticks = FALSE)
+p + geom_rug() + theme_tufte(ticks = FALSE)
 }
 \references{
 Tufte, Edward R. (2001) The Visual Display of

@@ -50,13 +50,13 @@ excel_new_pal <- function(theme = "Office Theme") {
 #' @export
 #' @example inst/examples/ex-theme_excel.R
 scale_fill_excel <- function(...) {
-  discrete_scale("fill", "excel", excel_pal(line = FALSE), ...)
+  discrete_scale("fill", palette = excel_pal(line = FALSE), ...)
 }
 
 #' @export
 #' @rdname scale_excel
 scale_colour_excel <- function(...) {
-  discrete_scale("colour", "excel", excel_pal(line = TRUE), ...)
+  discrete_scale("colour", palette = excel_pal(line = TRUE), ...)
 }
 
 #' @export
@@ -74,7 +74,7 @@ scale_color_excel <- scale_colour_excel
 #' @example inst/examples/ex-theme_excel_new.R
 #' @export
 scale_colour_excel_new <- function(theme = "Office Theme", ...) {
-  discrete_scale("colour", "excel_new", excel_new_pal(theme), ...)
+  discrete_scale("colour", palette = excel_new_pal(theme), ...)
 }
 
 #' @export
@@ -84,7 +84,7 @@ scale_color_excel_new <- scale_colour_excel_new
 #' @export
 #' @rdname scale_excel_new
 scale_fill_excel_new <- function(theme = "Office Theme", ...) {
-  discrete_scale("fill", "excel_new", excel_new_pal(theme), ...)
+  discrete_scale("fill", palette = excel_new_pal(theme), ...)
 }
 
 #' ggplot theme based on old Excel plots
@@ -100,20 +100,25 @@ scale_fill_excel_new <- function(theme = "Office Theme", ...) {
 #' @export
 #' @family themes excel
 #' @example inst/examples/ex-theme_excel.R
-theme_excel <- function(base_size = 12, base_family = "",
-                                horizontal = TRUE) {
+theme_excel <- function(base_size = 12, base_family = "", horizontal = TRUE) {
   gray <- "#C0C0C0"
   ret <- (theme_bw() +
-            theme(panel.background = element_rect(fill = gray),
-                  panel.border = element_rect(colour = "black",
-                                              linetype = 1),
-                  panel.grid.major = element_line(colour = "black"),
-                  panel.grid.minor = element_blank(),
-                  legend.key = element_rect(colour = NA),
-
-    legend.background = element_rect(colour = "black", linetype = 1),
- strip.background = element_rect(fill = "white",
-      colour = NA, linetype = 0)))
+    theme(
+      panel.background = element_rect(fill = gray),
+      panel.border = element_rect(
+        colour = "black",
+        linetype = 1
+      ),
+      panel.grid.major = element_line(colour = "black"),
+      panel.grid.minor = element_blank(),
+      legend.key = element_rect(colour = NA),
+      legend.background = element_rect(colour = "black", linetype = 1),
+      strip.background = element_rect(
+        fill = "white",
+        colour = NA,
+        linetype = 0
+      )
+    ))
   if (horizontal) {
     ret <- ret + theme(panel.grid.major.x = element_blank())
   } else {
@@ -133,13 +138,16 @@ theme_excel <- function(base_size = 12, base_family = "",
 #' @family themes excel
 #' @example inst/examples/ex-theme_excel_new.R
 #'
-theme_excel_new <- function(base_size = 9,
-                        base_family = "sans") {
-  colorlist <- list(lt_gray = "#D9D9D9",
-                    gray = "#BFBFBF",
-                    dk_gray = "#595959")
-  theme_bw(base_family = base_family,
-           base_size = base_size) +
+theme_excel_new <- function(base_size = 9, base_family = "sans") {
+  colorlist <- list(
+    lt_gray = "#D9D9D9",
+    gray = "#BFBFBF",
+    dk_gray = "#595959"
+  )
+  theme_bw(
+    base_family = base_family,
+    base_size = base_size
+  ) +
     theme(
       text = element_text(
         colour = colorlist$dk_gray,
@@ -156,7 +164,7 @@ theme_excel_new <- function(base_size = 9,
       panel.grid.major = element_line(
         linetype = "solid",
         colour = colorlist$gray,
-        size = 0.75 * PT_TO_MM
+        linewidth = 0.75 * PT_TO_MM
       ),
       panel.grid.minor = element_blank(),
       axis.title = element_blank(),

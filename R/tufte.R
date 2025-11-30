@@ -3,7 +3,7 @@
 #' Theme based on Chapter 6 'Data-Ink Maximization and Graphical
 #' Design' of Edward Tufte *The Visual Display of Quantitative
 #' Information*. No border, no axis lines, no grids. This theme works
-#' best in combination with \code{\link{geom_rug}()} or
+#' best in combination with \code{\link[ggplot2]{geom_rug}()} or
 #' \code{\link{geom_rangeframe}()}.
 #'
 #' @note
@@ -27,14 +27,16 @@
 theme_tufte <- function(base_size = 11, base_family = "serif", ticks = TRUE) {
   ## TODO: start with theme_minimal
   ret <- theme_bw(base_family = base_family, base_size = base_size) +
-    theme(legend.background = element_blank(),
-          legend.key = element_blank(),
-          panel.background = element_blank(),
-          panel.border = element_blank(),
-          strip.background = element_blank(),
-          plot.background = element_blank(),
-          axis.line = element_blank(),
-          panel.grid = element_blank())
+    theme(
+      legend.background = element_blank(),
+      legend.key = element_blank(),
+      panel.background = element_blank(),
+      panel.border = element_blank(),
+      strip.background = element_blank(),
+      plot.background = element_blank(),
+      axis.line = element_blank(),
+      panel.grid = element_blank()
+    )
   if (!ticks) {
     ret <- ret + theme(axis.ticks = element_blank())
   }

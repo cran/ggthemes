@@ -37,7 +37,7 @@ or \code{"diverging"}. See \funclink{tableau_color_pal}.}
 \item{direction}{If 1, the default, then use the original order of
 colors. If -1, then reverse the order.}
 
-\item{...}{Other arguments passed on to \funclink{discrete_scale}.}
+\item{...}{Other arguments passed on to \code{\link[ggplot2]{discrete_scale}()}.}
 }
 \description{
 Categorical (qualitative) color scales used in Tableau.
@@ -55,8 +55,7 @@ p <- ggplot(mtcars) +
 
 palettes <- ggthemes_data[["tableau"]][["color-palettes"]][["regular"]]
 for (palette in head(names(palettes), 3L)) {
-  print(p + scale_colour_tableau(palette) +
-          ggtitle(palette))
+  print(p + scale_colour_tableau(palette) + ggtitle(palette))
 }
 
 # the order of colour can be reversed

@@ -1,5 +1,5 @@
 ## 45 degrees in radians
-FORTY_FIVE <- base::pi / 4
+FORTY_FIVE <- base::pi / 4 # nolint: object_name_linter
 
 calc_slopes <- function(x, y, cull = FALSE) {
   dx <- abs(diff(x))
@@ -10,11 +10,13 @@ calc_slopes <- function(x, y, cull = FALSE) {
   } else {
     is.finite(s)
   }
-  list(s = s[touse],
-       dx = dx[touse],
-       dy = dy[touse],
-       Rx = diff(range(x)),
-       Ry = diff(range(y)))
+  list(
+    s = s[touse],
+    dx = dx[touse],
+    dy = dy[touse],
+    Rx = diff(range(x)),
+    Ry = diff(range(y))
+  )
 }
 
 #' Bank Slopes to 45 degrees
@@ -97,12 +99,11 @@ calc_slopes <- function(x, y, cull = FALSE) {
 #' @seealso \code{\link[lattice]{banking}()}
 #' @export
 #' @example inst/examples/ex-bank_slopes.R
-bank_slopes <- function(x, y, cull = FALSE, weight = NULL,
-                        method = c("ms", "as"), ...) {
+bank_slopes <- function(x, y, cull = FALSE, weight = NULL, method = c("ms", "as"), ...) {
   method <- match.arg(method)
-  FUN <- bank_slopes_funs[[method]]
+  fun <- bank_slopes_funs[[method]]
   # Heer produces functions with the target alpha = w/h = x/y
-  xyrat <- FUN(calc_slopes(x, y, cull = cull), ...)
+  xyrat <- fun(calc_slopes(x, y, cull = cull), ...)
   # but coord_fixed ratio is the aspect ratio y/x
   1 / xyrat
 }
@@ -110,11 +111,11 @@ bank_slopes <- function(x, y, cull = FALSE, weight = NULL,
 bank_slopes_funs <- list()
 
 bank_slopes_funs[["ms"]] <-
-    function(slopes, ...) {
-      median(abs(slopes$s)) * slopes$Rx / slopes$Ry
-    }
+  function(slopes, ...) {
+    median(abs(slopes$s)) * slopes$Rx / slopes$Ry
+  }
 
 bank_slopes_funs[["as"]] <-
-    function(slopes, ...) {
-      mean(abs(slopes$s)) * slopes$Rx / slopes$Ry
-    }
+  function(slopes, ...) {
+    mean(abs(slopes$s)) * slopes$Rx / slopes$Ry
+  }
